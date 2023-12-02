@@ -30,4 +30,4 @@ Notifications_API(通知)、jGrants API（全体的な補助金一覧取得API�
   ・CSS：　bootstrap5
   ・フロントエンド: Vue.jsを使ってみたい
   ・gem: Devise,Kaminari,Rspec,Rubocop,ActiveAdmin,Capybara,Faker
-  ・WebAPI: Notifications_API(通知)、jGrants API（全体的な補助金一覧取得API）
+  ・WebAPI: Notifications_API(通知)、jGrants API（全体的な補助金一覧取得API）、 Calender API（学習ロードマップのカレンダーAPI）
