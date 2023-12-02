@@ -31,3 +31,7 @@ Notifications_API(通知)、jGrants API（全体的な補助金一覧取得API�
   ・フロントエンド: Vue.jsを使ってみたい
   ・gem: Devise,Kaminari,Rspec,Rubocop,ActiveAdmin,Capybara,Faker
   ・WebAPI: Notifications_API(通知)、jGrants API（全体的な補助金一覧取得API）、 Calender API（学習ロードマップのカレンダーAPI）
+
+■ 画面変異図
+　https://drive.google.com/file/d/102z47-zGZjsBuKWEUODI-fDIrNSOLSel/view?usp=sharing
+　すでにdrawioでこのように作ったのですが、どうですか？
