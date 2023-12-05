@@ -35,3 +35,6 @@ Notifications_API(通知)、jGrants API（全体的な補助金一覧取得API�
 ■ 画面変異図
 　https://drive.google.com/file/d/102z47-zGZjsBuKWEUODI-fDIrNSOLSel/view?usp=sharing
   https://www.figma.com/file/F4LLAmBEPGcM8xG1TT27SL/%E7%84%A1%E9%A1%8C?type=design&node-id=0%3A1&mode=design&t=iGbvQnmO7hEUdi45-1
+
+■ ER図
+　https://drive.google.com/file/d/1cc1JW0u95TGoG1MoJev7gT7A_y6rskeT/view?usp=sharing
