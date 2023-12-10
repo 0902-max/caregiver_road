@@ -1,0 +1,36 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/app
+      - /app/vendor
+      - /app/tmp
+      - /app/log
+      - /app/.git
+    environment:
+      TZ: Asia/Tokyo
+      SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
+      POSTGRES_USER: moche
+      POSTGRES_PASSWORD: yuuki0902
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - chrome
+  db:
+    image: postgres
+    environment:
+      TZ: Asia/Tokyo
+      POSTGRES_USER: moche
+      POSTGRES_PASSWORD: yuuki0902
+    ports:
+      - 3307:3306
+  chrome:
+    image: seleniarm/standalone-chromium:latest
+    shm_size: 256m
+    ports:
+      - 4444:4444
