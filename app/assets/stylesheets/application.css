@@ -13,3 +13,86 @@
  *= require_tree .
  *= require_self
  */
+ html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+body {
+    background: linear-gradient(to bottom, #c4df9b, #ffffff); /* 背景色を指定してください */
+    font-family: 'Arial', sans-serif; /* 適切なフォントを指定してください */
+    text-align: center; /* 文字をセンターに配置 */
+    height: 100%;
+  }
+  
+  /* 他のスタイルがあればここに追加してください */
+  header {
+    background: #D2B48C; /* ヘッダーの背景色を指定してください */
+    display: flex;
+    padding: 10px 20px;
+    text-align: right;
+   }
+
+   header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  header li {
+    margin-left: 20px; /* 各リストアイテムの左側の余白を設定 */
+  }
+  
+  
+  main {
+    flex: 1; /* main セクションが残りのスペースを占めるようにします */
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #D2B48C; /* フッターの背景色を指定してください */
+    color: #fff; /* フッターの文字色を指定してください */
+    padding: 10px; /* 適切なパディングを指定してください */
+    text-align: center; /* 中央寄せ */
+  }
+  
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  footer nav li {
+    display: inline-block;
+    margin-right: 50px; /* 適切なマージンを追加して適切な間隔を調整します */
+  }
+  
+  /* app/assets/stylesheets/application.css (or application.scss) */
+
+.question-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.options {
+  margin-top: 20px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+/* app/assets/stylesheets/application.css (or application.scss) */
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* ボタンの背景色 */
+  color: #fff; /* ボタンのテキスト色 */
+  text-decoration: none;
+  border-radius: 5px; /* ボタンの角を丸くする場合 */
+}

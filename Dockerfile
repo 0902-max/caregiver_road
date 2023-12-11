@@ -2,7 +2,7 @@
 FROM ruby:3.2.2
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /myapp
 
 # Install dependencies
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
@@ -10,8 +10,8 @@ RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 # Install Rails
 RUN gem install rails -v '7.0.4'
 
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
+ADD Gemfile /myapp/Gemfile
+ADD Gemfile.lock /myapp/Gemfile.lock
 # Install gems
 RUN bundle install
 

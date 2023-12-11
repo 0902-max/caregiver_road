@@ -6,11 +6,11 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - .:/app
-      - /app/vendor
-      - /app/tmp
-      - /app/log
-      - /app/.git
+      - .:/myapp
+      - /myapp/vendor
+      - /myapp/tmp
+      - /myapp/log
+      - /myapp/.git
     environment:
       TZ: Asia/Tokyo
       SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
