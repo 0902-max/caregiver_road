@@ -6,6 +6,14 @@ Rails.application.routes.draw do
   authenticated :user do
     root 'homes#top', as: :authenticated_root
   end
+  resources :learning_roadmaps
+  resources :grants
+  resources :past_exams, only: [:index, :show] do
+    member do
+      get 'start'
+      post 'answer'
+    end
+  end
   root 'welcome#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

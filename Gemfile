@@ -20,6 +20,7 @@ gem 'kaminari'
 gem 'activeadmin'
 gem 'faker'
 gem 'importmap-rails'
+#gem 'faraday'
 #gem 'rails-i18n'
 #gem 'devise-i18n-views'
 

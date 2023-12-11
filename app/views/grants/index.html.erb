@@ -1,0 +1,28 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補助金検索ページ</title>
+</head>
+<body>
+  <h1>補助金検索ページ</h1>
+  <p>ここでは登録されている補助金の制度を探すことができるよ！</p>
+  <form id="searchForm" action="<%= grants_path %>" method="get">
+    <label for="keyword">キーワード:</label>
+    <input type="text" id="keyword" name="keyword">
+    <button type="submit">検索</button>
+  </form>
+
+  <% if @grants %>
+  <div id="searchResults">
+    <h2>検索結果一覧:</h2>
+    <% @grants.each do |grant| %>
+      <p><%= grant['title'] %></p>
+    <% end %>
+
+    <%= paginate @grants if @count > 8 %>
+  </div>
+<% elsif @error %>
+  <p><%= @error %></p>
+<% end %>
+
+</body>
