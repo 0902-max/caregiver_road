@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>介護福祉士への道</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +12,23 @@
   </head>
 
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "ログアウト", users_sign_out_path, method: :delete %>
+        </li>
+        <li>
+          <%= link_to "トップページ", root_path %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+      <% end %>
+      </header>
     <%= yield %>
   </body>
 </html>
