@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_11_075740) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_12_011000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,7 +80,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_11_075740) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vocabulary_entries", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "vocabulary_note_id", null: false
+    t.string "word"
+    t.string "meaning"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_vocabulary_entries_on_user_id"
+    t.index ["vocabulary_note_id"], name: "index_vocabulary_entries_on_vocabulary_note_id"
+  end
+
+  create_table "vocabulary_notes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_vocabulary_notes_on_user_id"
+  end
+
   add_foreign_key "learning_roadmaps", "users"
   add_foreign_key "user_past_exam_attempts", "past_exams"
   add_foreign_key "user_past_exam_attempts", "users"
+  add_foreign_key "vocabulary_entries", "users"
+  add_foreign_key "vocabulary_entries", "vocabulary_notes"
+  add_foreign_key "vocabulary_notes", "users"
 end

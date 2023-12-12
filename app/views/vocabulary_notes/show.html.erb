@@ -1,0 +1,12 @@
+<h1><%= @vocabulary_note.title %></h1>
+<p><%= @vocabulary_note.description %></p>
+
+<h2>Vocabulary Entries</h2>
+<% @vocabulary_entries.each do |entry| %>
+  <p><strong>Word:</strong> <%= entry.word %></p>
+  <p><strong>Meaning:</strong> <%= entry.meaning %></p>
+<% end %>
+
+<%= link_to 'Back to Vocabulary Notes', vocabulary_notes_path %>
+
+<%= link_to 'Add New Vocabulary Entry', new_vocabulary_note_vocabulary_entry_path(@vocabulary_note) %>

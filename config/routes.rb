@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       post 'answer'
     end
   end
+  resources :vocabulary_notes do
+    resources :vocabulary_entries, only: [:new, :create]
+  end
   root 'welcome#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
