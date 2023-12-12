@@ -24,6 +24,14 @@ gem 'faraday'
 gem 'rails-i18n'
 gem 'devise-i18n-views'
 gem 'pry-rails'
+gem 'google-api-client', require: 'google/apis/calendar_v3'
+gem 'googleauth'
+gem 'omniauth-google-oauth2'
+gem 'jquery-rails', '4.3.3'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
