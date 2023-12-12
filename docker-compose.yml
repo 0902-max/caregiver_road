@@ -23,6 +23,8 @@ services:
       - chrome
   db:
     image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     environment:
       TZ: Asia/Tokyo
       POSTGRES_USER: moche
@@ -34,3 +36,5 @@ services:
     shm_size: 256m
     ports:
       - 4444:4444
+volumes:
+  postgres_data:

@@ -1,0 +1,2 @@
+module VocabularyEntriesHelper
+end

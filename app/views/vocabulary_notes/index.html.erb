@@ -1,0 +1,7 @@
+<h1>Your Vocabulary Notes</h1>
+
+<% @vocabulary_notes.each do |note| %>
+  <%= link_to note.title, vocabulary_note_path(note) %>
+<% end %>
+
+<%= link_to 'Create New Vocabulary Note', new_vocabulary_note_path %>

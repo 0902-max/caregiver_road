@@ -20,10 +20,10 @@ gem 'kaminari'
 gem 'activeadmin'
 gem 'faker'
 gem 'importmap-rails'
-#gem 'faraday'
-#gem 'rails-i18n'
-#gem 'devise-i18n-views'
-
+gem 'faraday'
+gem 'rails-i18n'
+gem 'devise-i18n-views'
+gem 'pry-rails'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
