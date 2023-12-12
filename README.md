@@ -19,3 +19,7 @@
 ■ 画面変異図 　https://drive.google.com/file/d/102z47-zGZjsBuKWEUODI-fDIrNSOLSel/view?usp=sharing https://www.figma.com/file/F4LLAmBEPGcM8xG1TT27SL/%E7%84%A1%E9%A1%8C?type=design&node-id=0%3A1&mode=design&t=iGbvQnmO7hEUdi45-1
 
 ■ ER図 　https://drive.google.com/file/d/1cc1JW0u95TGoG1MoJev7gT7A_y6rskeT/view?usp=sharing
+
+
+■作成段階での変更
+　Google Calender APIを使用予定であったが、思っているものと違い、カスタムがしやすいFullCalendarを使用してカレンダーを実装してイベントの追加と編集を行う。その関係でER図のGoogleCalendarEvantsテーブル名をEventsに変更した。
