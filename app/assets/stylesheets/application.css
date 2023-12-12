@@ -96,3 +96,9 @@ label {
   text-decoration: none;
   border-radius: 5px; /* ボタンの角を丸くする場合 */
 }
+
+/*
+ *= require_tree .
+ *= require_self
+ *= require fullcalendar
+*/
