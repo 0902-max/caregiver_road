@@ -1,0 +1,11 @@
+<!-- app/views/questions/_choices.html.erb -->
+
+<ul id="choices-container">
+  <% choices.each do |choice| %>
+    <li>
+      <%= button_tag type: 'submit', name: 'choice_id', value: choice.id do %>
+        <%= choice.body %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

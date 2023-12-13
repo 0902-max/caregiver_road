@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_12_074749) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_13_042854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.bigint "choice_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["choice_id"], name: "index_answers_on_choice_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.integer "question_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "choice_id", null: false
+    t.string "document_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["choice_id"], name: "index_documents_on_choice_id"
+    t.index ["user_id"], name: "index_documents_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -77,6 +105,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_12_074749) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_past_exam_attempts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "past_exam_id", null: false
@@ -123,6 +157,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_12_074749) do
     t.index ["user_id"], name: "index_vocabulary_notes_on_user_id"
   end
 
+  add_foreign_key "answers", "choices"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
+  add_foreign_key "documents", "choices"
+  add_foreign_key "documents", "users"
   add_foreign_key "events", "users"
   add_foreign_key "learning_roadmaps", "users"
   add_foreign_key "notifications", "events"
