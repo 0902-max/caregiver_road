@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   before_action :authenticate_user!
-  #before_action :redirect_after_sign_in
+  before_action :redirect_after_sign_in, except: :description
   def top
   end
 

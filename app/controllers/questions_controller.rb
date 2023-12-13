@@ -13,8 +13,6 @@ class QuestionsController < ApplicationController
       next_question_id = 2
     elsif choice_id == '2'
       next_question_id = 3
-    else
-      # その他の選択肢に対する処理
     end
 
     next_question = Question.find(next_question_id)
