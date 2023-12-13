@@ -3,8 +3,11 @@
 <ul id="choices-container">
   <% choices.each do |choice| %>
     <li>
-      <%= button_tag type: 'submit', name: 'choice_id', value: choice.id do %>
-        <%= choice.body %>
+      <%= form_with(url: documents_path, method: :post) do |form| %>
+        <%= form.hidden_field :choice_id, value: choice.id %>
+        <%= form.button type: 'submit', value: choice.id do %>
+          <%= choice.body %>
+        <% end %>
       <% end %>
     </li>
   <% end %>
