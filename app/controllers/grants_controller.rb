@@ -1,4 +1,6 @@
 class GrantsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     # 検索フォームからのキーワード取得
     keyword = params[:keyword]

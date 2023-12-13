@@ -1,0 +1,21 @@
+<!-- app/views/questions/index.html.erb -->
+
+<h1>質問ページ</h1>
+
+<div id="question-container">
+  <% current_question = Question.find(1) %>
+  <p><strong>質問:</strong> <%= current_question.body %></p>
+</div>
+
+<%= form_with(url: '/questions/get_next_question', method: 'post', local: true) do |form| %>
+  <ul id="choices-container">
+    <% choices = Choice.where(question_id: 1) %>
+    <% choices.each do |choice| %>
+      <li>
+        <%= button_tag type: 'submit', name: 'choice_id', value: choice.id do %>
+          <%= choice.body %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

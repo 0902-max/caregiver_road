@@ -1,0 +1,11 @@
+<h1>書類一覧</h1>
+
+<% if @documents.any? %>
+  <ul>
+    <% @documents.each do |document| %>
+      <li><%= document.document_name %> (選択肢: <%= document.choice.body %>)</li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>まだ書類はありません。</p>
+<% end %>
