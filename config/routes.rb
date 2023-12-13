@@ -8,10 +8,15 @@ Rails.application.routes.draw do
   end
   resources :learning_roadmaps
   resources :grants
+  resources :users do
+    member do
+      post 'reset_score'
+    end
+  end
   resources :past_exams, only: [:index, :show] do
     member do
-      get 'start'
       post 'answer'
+      get 'result'
     end
   end
   resources :vocabulary_notes do

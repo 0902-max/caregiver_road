@@ -4,6 +4,34 @@
   <!-- 説明文 -->
   <p>これから過去の試験を始めます。準備ができたらスタートボタンを押してください。</p>
 
-  <!-- スタートボタン -->
-  <%= link_to 'スタート', '#', class: 'btn btn-primary' %>
+  <%= link_to 'スタート', past_exam_path(@past_exam), class: 'btn btn-primary', id: 'start-button' %>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // スタートボタンがクリックされたときの処理
+    document.getElementById('start-button').addEventListener('click', function() {
+      // リセット処理を行うAjaxリクエスト
+      fetch('<%= reset_score_user_path(current_user) %>', {
+        method: 'POST',
+        headers: {
+          'X-CSRF-Token': '<%= form_authenticity_token %>',
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // リセットが成功したらアラートを表示
+          alert('Score has been reset!');
+        } else {
+          // リセットが失敗したらエラーアラートを表示
+          alert('Failed to reset score.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  });
+</script>
