@@ -2,22 +2,54 @@
   <h1 id="exam-text"><%= @past_exam.exam_text %></h1>
 
   <!-- 選択肢表示 -->
-    <li><input type="radio" name="selected_option" value="A"> <%= @past_question.option_a %></li>
-    <br>
-    <li><input type="radio" name="selected_option" value="B"> <%= @past_question.option_b %></li>
-    <br>
-    <li><input type="radio" name="selected_option" value="C"> <%= @past_question.option_c %></li>
-    <br>
-    <li><input type="radio" name="selected_option" value="D"> <%= @past_question.option_d %></li>
-    <br>
-    <li><input type="radio" name="selected_option" value="E"> <%= @past_question.option_e %></li>
-    <br>
-    <br>
+  <%= form_with(model: @past_exam, url: answer_past_exam_path(@past_exam), method: 'post') do |form| %>
+    <ul>
+      <li><%= form.radio_button :selected_option, 'a' %> <%= @past_exam.option_a %></li>
+      <li><%= form.radio_button :selected_option, 'b' %> <%= @past_exam.option_b %></li>
+      <li><%= form.radio_button :selected_option, 'c' %> <%= @past_exam.option_c %></li>
+      <li><%= form.radio_button :selected_option, 'd' %> <%= @past_exam.option_d %></li>
+      <li><%= form.radio_button :selected_option, 'e' %> <%= @past_exam.option_e %></li>
+    </ul>
 
-  <!-- 回答ボタン -->
-  <button>回答する</button>
-  <br>
-  <br>
-  <!-- 戻るボタン -->
-  <%= link_to '戻る', past_exams_path %>
+    <!-- 回答ボタン -->
+    <%= form.submit '回答する', onclick: 'submitAnswer()' %>
+  <% end %>
 </div>
+<script>
+  function submitAnswer() {
+    var selectedOption = document.querySelector('input[name="selected_option"]:checked');
+
+    if (!selectedOption) {
+      alert('選択してください');
+      return;
+    }
+
+    // 非同期通信
+    var formData = new FormData(document.getElementById('attempt-form'));
+
+    fetch('<%= answer_past_exam_path(@past_exam) %>', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-CSRF-Token': '<%= form_authenticity_token %>',
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        if (data.next_exam_id) {
+          // 次の問題がある場合は、次の問題へ遷移
+          window.location.href = '<%= past_exam_path(@past_exam) %>' + '/' + data.next_exam_id;
+        } else if (data.result_path) {
+          // 次の問題がない場合は、結果ページへ遷移
+          window.location.href = '<%= result_past_exam_path(@past_exam) %>';
+        }
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
+</script>
