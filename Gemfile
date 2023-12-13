@@ -30,6 +30,7 @@ gem 'omniauth-google-oauth2'
 gem 'jquery-rails', '4.3.3'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'webpacker'
 
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]

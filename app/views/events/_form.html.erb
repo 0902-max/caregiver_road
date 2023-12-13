@@ -1,0 +1,19 @@
+<!-- app/views/events/_form.html.erb -->
+
+<h2>新しいイベントを追加</h2>
+
+<%= form_with(model: @event, url: events_path, local: true) do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :start_datetime %>
+    <%= form.datetime_local_field :start_datetime %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit 'イベントを作成' %>
+  </div>
+<% end %>

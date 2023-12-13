@@ -1,0 +1,53 @@
+<head>
+    <meta charset='utf-8' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          height: '500px',
+          aspectRatio: 1,
+          locale: 'ja',
+          editable: true, // イベントを編集可能にする
+          events: [
+            {
+              title: '介護福祉士試験（筆記）',
+              start: '2024-01-28'
+            },
+            {
+              title: '提出書類受付期間',
+              start: '2024-08-09',
+              end: '2024-09-08'
+            },
+            {
+              title: '介護福祉士試験（実技）',
+              start: '2024-03-03'
+            }
+          ]
+        });
+        calendar.render();
+
+      });
+    </script>
+</head>
+  <div id="calendar-container">
+    <div id="calendar"></div>
+
+    <div id="sidebar">
+      <div id="event-list">
+        <h1>イベント一覧</h1>
+        <ul>
+        <% @events.order(:start_datetime).limit(5).each do |event| %>
+            <li><%= event.title %></li>
+            <li><%= event.start_datetime.strftime("%Y-%m-%d %H:%M") %></li>
+            <br>
+          <% end %>
+        </ul>
+      </div>
+
+      <div id="event-form">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
