@@ -1,14 +1,21 @@
+<br>
+<br>
 <h1>介護福祉士になろう！</h1>
-<button id="notificationButton">通知</button>
+<br>
+<br>
+<br>
+<button id="notificationButton" class="btn btn-success">通知</button>
+<br>
+<br>
 <div id="eventDataArea"></div>
 <footer>
   <nav>
     <ul>
-      <li><%= link_to "ロードマップ", events_path %></li>
-      <li><%= link_to "補助金", grants_path %></li>
-      <li><%= link_to "書類", documents_path %></li>
-      <li><%= link_to "過去問", past_exams_path %></li>
-      <li><%= link_to "単語帳", vocabulary_notes_path %></li>
+      <li><%= link_to "ロードマップ", events_path, class: "btn btn-success"%></li>
+      <li><%= link_to "補助金", grants_path, class: "btn btn-success"%></li>
+      <li><%= link_to "書類", documents_path, class: "btn btn-success"%></li>
+      <li><%= link_to "過去問", past_exams_path, class: "btn btn-success"%></li>
+      <li><%= link_to "単語帳", vocabulary_notes_path, class: "btn btn-success"%></li>
     </ul>
   </nav>
 </footer>

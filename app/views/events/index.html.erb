@@ -38,11 +38,11 @@
       <div id="event-list">
         <h1>イベント一覧</h1>
         <ul>
-        <% @events.order(:start_datetime).limit(5).each do |event| %>
+        <% @events.each do |event| %>
             <li><%= event.title %></li>
             <li><%= event.start_datetime.strftime("%Y-%m-%d %H:%M") %></li>
             <br>
-          <% end %>
+        <% end %>
         </ul>
       </div>
 

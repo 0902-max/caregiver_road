@@ -1,13 +1,18 @@
-<h1>Create New Vocabulary Entry</h1>
+<br>
+<br>
+<h1>単語を作成しよう！</h1>
+<div class="text-center">
+  <%= form_with(model: [@vocabulary_note, @vocabulary_entry], url: vocabulary_note_vocabulary_entries_path(@vocabulary_note)) do |form| %>
+    <%= form.label :WORD %>
+    <%= form.text_field :word %>
+    <%= form.label :MEAN %>
+    <%= form.text_field :meaning %>
 
-<%= form_with(model: [@vocabulary_note, @vocabulary_entry], url: vocabulary_note_vocabulary_entries_path(@vocabulary_note)) do |form| %>
-  <%= form.label :word %>
-  <%= form.text_field :word %>
+    <%= form.submit '作成', class: "btn btn-success" %>
+  <% end %>
+  <br>
+  <br>
+  <br>
 
-  <%= form.label :meaning %>
-  <%= form.text_field :meaning %>
-
-  <%= form.submit 'Create Vocabulary Entry' %>
-<% end %>
-
-<%= link_to 'Back to Vocabulary Note', vocabulary_note_path(@vocabulary_note) %>
+  <%= link_to '戻る', vocabulary_note_path(@vocabulary_note), class: "btn btn-primary" %>
+</div>

@@ -1,7 +1,17 @@
-<h1>Your Vocabulary Notes</h1>
-
+<div class="text-center">
+<h1>介護福祉士への道　　単語帳</h1>
+<br>
+<br>
+<br>
+<p>作成した単語帳から単語を確認できるよ</p>
+<p>単語帳を複数作成する事もできるから、カテゴリーごとに自分で整理すれば分かりやすいよ！</p>
+<br>
+<br>
 <% @vocabulary_notes.each do |note| %>
-  <%= link_to note.title, vocabulary_note_path(note) %>
+  <%= link_to note.title, vocabulary_note_path(note), class: "btn btn-success" %>
 <% end %>
-
-<%= link_to 'Create New Vocabulary Note', new_vocabulary_note_path %>
+<br>
+<br>
+<br>
+<%= link_to '単語帳作成', new_vocabulary_note_path, class: "btn btn-primary" %>
+</div>

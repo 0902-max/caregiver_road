@@ -15,17 +15,17 @@
     <header>
       <% if user_signed_in? %>
         <li>
-          <%= link_to "ログアウト", users_sign_out_path, method: :delete %>
+          <%= link_to "ログアウト", users_sign_out_path, method: :delete, style: 'color: white;', class: 'link' %>
         </li>
         <li>
-          <%= link_to "トップページ", root_path %>
+          <%= link_to "トップページ", root_path, style: 'color: white;', class: 'link' %>
         </li>
       <% else %>
         <li>
-          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "新規登録", new_user_registration_path, style: 'color: white;', class: 'link' %>
         </li>
         <li>
-          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "ログイン", new_user_session_path, style: 'color: white;', class: 'link' %>
         </li>
       <% end %>
       </header>
