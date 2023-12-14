@@ -18,6 +18,14 @@ class EventsController < ApplicationController
         render :index
       end
     end
+
+    def get_upcoming_events
+      start_date = Date.today
+      end_date = start_date + 3.days
+      upcoming_events = Event.where(start_datetime: start_date.beginning_of_day..end_date.end_of_day)
+  
+      render json: upcoming_events, only: [:title, :start_datetime]
+    end
   
     private
   

@@ -1,4 +1,6 @@
 <h1>介護福祉士になろう！</h1>
+<button id="notificationButton">通知</button>
+<div id="eventDataArea"></div>
 <footer>
   <nav>
     <ul>
@@ -10,3 +12,47 @@
     </ul>
   </nav>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      console.log('DOMContentLoaded');
+
+      const notificationButton = document.getElementById('notificationButton');
+
+      if (!notificationButton) {
+        console.error('Notification button not found');
+        return;
+      }
+
+      notificationButton.addEventListener('click', async () => {
+        console.log('Notification button clicked');
+
+        try {
+          const permission = await Notification.requestPermission();
+
+          if (permission === 'granted') {
+            console.log('Notification permission granted');
+
+            const response = await fetch('/get_upcoming_events');
+            const events = await response.json();
+
+            if (events.length > 0) {
+              console.log('Upcoming events found:', events);
+
+              events.forEach(event => {
+                const notificationMessage = `${event.title} が ${event.start_datetime} に始まります。`;
+                new Notification('Upcoming Event', { body: notificationMessage });
+              });
+              eventDataArea.innerHTML = events.map(event => `${event.title} が${event.start_datetime.split('T')[0]}から始まります`).join('<br><br>');
+            } else {
+              console.log('No upcoming events');
+              new Notification('Upcoming Event', { body: '当日から３日後の予定はありません。' });
+            }
+          } else {
+            alert('通知の許可がもらえませんよ');
+          }
+        } catch (error) {
+          console.error('通知の送信中にエラーが発生しました:', error);
+        }
+      });
+    });
+  </script>
