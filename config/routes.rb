@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :questions, only: [:index, :new, :create]
   post '/questions/get_next_question', to: 'questions#get_next_question'
   resources :documents, only: [:index, :create]
-  resources :learning_roadmaps
+  get '/get_upcoming_events', to: 'events#get_upcoming_events'
   resources :events, only: [:index, :create]
   resources :grants
   resources :users do
