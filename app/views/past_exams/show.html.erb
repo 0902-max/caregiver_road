@@ -1,9 +1,9 @@
-<div>
+<div class="exam-container">
   <h1 id="exam-text"><%= @past_exam.exam_text %></h1>
 
   <!-- 選択肢表示 -->
   <%= form_with(model: @past_exam, url: answer_past_exam_path(@past_exam), method: 'post') do |form| %>
-    <ul>
+    <ul class="custom-list">
       <li><%= form.radio_button :selected_option, 'a' %> <%= @past_exam.option_a %></li>
       <li><%= form.radio_button :selected_option, 'b' %> <%= @past_exam.option_b %></li>
       <li><%= form.radio_button :selected_option, 'c' %> <%= @past_exam.option_c %></li>
@@ -12,18 +12,12 @@
     </ul>
 
     <!-- 回答ボタン -->
-    <%= form.submit '回答する', onclick: 'submitAnswer()' %>
+    <%= form.submit '回答する', onclick: 'submitAnswer()', class: "btn btn-success" %>
   <% end %>
 </div>
 <script>
   function submitAnswer() {
     var selectedOption = document.querySelector('input[name="selected_option"]:checked');
-
-    if (!selectedOption) {
-      alert('選択してください');
-      return;
-    }
-
     // 非同期通信
     var formData = new FormData(document.getElementById('attempt-form'));
 

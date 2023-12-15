@@ -1,5 +1,32 @@
+<style>
+  /* 共通のボタンスタイル */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 120px;
+    border: 2px solid #333; /* 境界線の色 */
+    border-radius: 8px; /* 角丸にする */
+    transition: background-color 0.3s ease; /* ホバーエフェクトのスムーズな遷移 */
+
+    &:hover {
+      background-color: #add8e6; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+
+  /* btn-success クラスのスタイルを拡張 */
+  .btn-success {
+    background-color: #28a745; /* 成功の色、必要に応じて調整 */
+    color: #fff; /* テキストの色 */
+  }
+</style>
+<br>
+<br>
 <h1>介護福祉士への道</h1>
 <br>
 <br>
 <br>
-<%= link_to "始めよう！", '#', class: 'btn-btn-primary'%>
+<%= link_to "始めよう！", new_user_registration_path, class: 'btn btn-success'%>

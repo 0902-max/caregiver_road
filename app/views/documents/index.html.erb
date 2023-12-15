@@ -1,7 +1,10 @@
+<br>
+<br>
 <h1>書類一覧</h1>
-
+<br>
+<br>
 <% if @documents.any? %>
-  <ul>
+  <ul class="large-text-list">
     <% @documents.each do |document| %>
       <li><%= document.document_name %> (選択肢: <%= document.choice.body %>)</li>
     <% end %>
