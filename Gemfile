@@ -26,7 +26,6 @@ gem 'pry-rails'
 gem 'jquery-rails', '4.4.0'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-gem 'webpacker'
 
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
