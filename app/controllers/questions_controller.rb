@@ -15,16 +15,9 @@ class QuestionsController < ApplicationController
       next_question_id = 3
     end
 
-    next_question = Question.find(next_question_id)
-    choices = Choice.where(question_id: next_question_id)
+    @next_question = Question.find(next_question_id)
+    @next_choices = Choice.where(question_id: next_question_id)
 
-    respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: [
-          turbo_stream.replace('question-container', partial: 'questions/question', locals: { question: next_question }),
-          turbo_stream.replace('choices-container', partial: 'questions/choices', locals: { choices: choices })
-        ]
-      end
-    end
+    render :index
   end
 end
