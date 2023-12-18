@@ -12,3 +12,8 @@
 <% else %>
   <p>まだ書類はありません。</p>
 <% end %>
+<br>
+<br>
+<% if defined? @choice && @choice.to_i == 5 %>
+  <%= link_to "介護福祉士の従事期間計算", "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn btn-success", style: "font-size: 22px; padding: 10px;" %>
+<% end %>

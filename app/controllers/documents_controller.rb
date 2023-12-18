@@ -4,6 +4,7 @@ class DocumentsController < ApplicationController
   def index
     # ログインユーザーに紐づく書類を取得
     @documents = current_user.documents
+    @choice = params[:choice]  # パラメータから choice を取得
     Rails.logger.info("Current user's documents: #{@documents.inspect}")
   end
 
