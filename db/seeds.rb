@@ -1418,6 +1418,7 @@ PastExam.create!(
 # Question 113
 PastExam.create!(
   exam_text: "介護福祉職が事例研究を行う目的として，最も適切なものを 1 つ選びなさい。"
+  option_a: "事業所の介護の理念の確認",
   option_b: "介護福祉職の能力を調べること",
   option_c: "介護過程から介護実践を振り返ること",
   option_d: "介護報酬の獲得",
