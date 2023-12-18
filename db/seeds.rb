@@ -9,11 +9,11 @@ Question.create!(
 )
 Choice.create!(
   question_id: 1,
-  body: "高卒か一般大学卒"
+  body: "福祉大学卒か養成施設卒"
 )
 Choice.create!(
   question_id: 1,
-  body: "福祉大学卒か養成施設卒"
+  body: "高卒か一般大学卒"
 )
 Choice.create!(
   question_id: 2,
