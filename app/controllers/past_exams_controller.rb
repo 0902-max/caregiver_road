@@ -4,6 +4,10 @@ class PastExamsController < ApplicationController
   def index
     @past_exams = PastExam.all
     @past_exam = @past_exams.first
+    if user_signed_in?
+      # ユーザーがログインしている場合、past_scoreを取得
+      @user_past_score = current_user.past_score
+    end
   end
 
   def show
@@ -50,5 +54,9 @@ class PastExamsController < ApplicationController
   def result
     @user = current_user
     @user_past_exam = @user.user_past_exam_attempts.where(past_exam: @past_exam)
+    if current_user.present?
+      # ユーザーがログインしている場合、scoreをpast_scoreにコピー
+      current_user.update(past_score: current_user.score)
+    end
   end  
 end
