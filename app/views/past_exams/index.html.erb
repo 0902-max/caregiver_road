@@ -5,6 +5,12 @@
   <!-- 説明文 -->
   <p>これから過去の試験を始めます。準備ができたらスタートボタンを押してください。</p>
 
+  <!-- 過去のスコア表示 -->
+  <h2>過去問の結果（履歴）</h2>
+  <% if user_signed_in? %>
+    <p>前回の結果:  <%= @user_past_score %></p>
+  <% end %>
+
   <%= link_to 'スタート', past_exam_path(@past_exam), class: 'btn_09', id: 'start-button' %>
 </div>
 <script>
