@@ -1,0 +1,39 @@
+
+ja:
+  events:
+    list_title: 'イベント一覧'
+    title: 'タイトル'
+    start_datetime: 'いつ'
+    date_format: '%Y-%m-%d %H:%M'
+    form:
+      title_label: 'タイトル'
+      start_datetime_label: 'いつから'
+      submit_button: 'イベントを作成'
+  grants:
+    search_page_title: '補助金検索ページ'
+    search_page_description: 'ここでは登録されている補助金の制度を探すことができるよ！'
+    search_form_label: 'キーワード:'
+    search_button: '検索'
+    search_results_title: '検索結果一覧'
+    error_message: 'エラーが発生しました。'
+  past_exams:
+    index_title: '介護福祉士試験を始めるよ！'
+    description: 'これから過去の試験を始めます。準備ができたらスタートボタンを押してください。'
+    history_title: '過去問の結果（履歴）'
+    last_result: '前回の結果:'
+    answer_button: '回答する'
+  result_page:
+    title: '結果ページ'
+    score_text: 'スコア:'
+  questions:
+    index_title: '質問ページ'
+    question_text: '質問:'
+    next_question_text: '次の質問:'
+    choice_button_text: '選択'
+    next_choices_title: '次の選択肢:'
+  vocabularies:
+    create_title: '単語を作成しよう！'
+    word_label: '単語'
+    meaning_label: '意味'
+    create_button: '作成'
+    back_button: '戻る'

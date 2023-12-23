@@ -36,11 +36,11 @@
 
     <div id="sidebar">
       <div id="event-list">
-        <h1>イベント一覧</h1>
+        <h1><%= t('events.list_title') %></h1>
         <ul>
         <% @events.each do |event| %>
-            <li><%= event.title %></li>
-            <li><%= event.start_datetime.strftime("%Y-%m-%d %H:%M") %></li>
+            <li><%= t('events.title') %>: <%= event.title %></li>
+            <li><%= t('events.start_datetime') %>: <%= event.start_datetime.strftime(t('events.date_format')) %></li>
             <br>
         <% end %>
         </ul>
