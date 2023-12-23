@@ -1,12 +1,12 @@
 <!-- app/views/questions/index.html.erb -->
 <br>
 <br>
-<h1 class="custom-h1">質問ページ</h1>
+<h1 class="custom-h1"><%= t('questions.index_title') %></h1>
 <br>
 <br>
 <div id="question-container">
   <% current_question = Question.find(1) %>
-  <p class="custom-p"><strong>質問:</strong> <%= current_question.body %></p>
+  <p class="custom-p"><strong><%= t('questions.question_text') %></strong> <%= current_question.body %></p>
 </div>
 <br>
 <%= form_with(url: '/questions/get_next_question', method: 'post', local: true) do |form| %>
@@ -26,7 +26,7 @@
 <% if defined?(@next_question) %>
   <!-- 選択肢が選ばれた後に表示するコンテンツ -->
   <div id="next-question-container">
-    <p class="custom-p"><strong>次の質問:</strong> <%= @next_question.body %></p>
+    <p class="custom-p"><strong><%= t('questions.next_question_text') %></strong> <%= @next_question.body %></p>
     <br>
     <ul id="choices-container" class="horizontal-choices">
   <% @next_choices.each do |choice| %>

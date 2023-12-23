@@ -1,14 +1,14 @@
 <div class=past_index>
-  <h1>介護福祉士試験を始めるよ！</h1>
+  <h1><%= t('past_exams.index_title') %></h1>
   
 
   <!-- 説明文 -->
-  <p>これから過去の試験を始めます。準備ができたらスタートボタンを押してください。</p>
+  <p><%= t('past_exams.description') %></p>
 
   <!-- 過去のスコア表示 -->
-  <h2>過去問の結果（履歴）</h2>
+  <h2><%= t('past_exams.history_title') %></h2>
   <% if user_signed_in? %>
-    <p>前回の結果:  <%= @user_past_score %></p>
+    <p><%= t('past_exams.last_result') %>  <%= @user_past_score %></p>
   <% end %>
 
   <%= link_to 'スタート', past_exam_path(@past_exam), class: 'btn_09', id: 'start-button' %>
@@ -33,7 +33,7 @@
           alert('始めるよ！');
         } else {
           // リセットが失敗したらエラーアラートを表示
-          alert('Failed to reset score.');
+          alert('スコアのリセットに失敗しました');
         }
       })
       .catch(error => {
