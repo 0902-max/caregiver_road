@@ -1,6 +1,6 @@
 <!-- app/views/events/_form.html.erb -->
 
-<h2>新しいイベントを追加</h2>
+<h2><%= t('events.form.title') %></h2>
 
 <%= form_with(model: @event, url: events_path, local: true) do |form| %>
   <div>

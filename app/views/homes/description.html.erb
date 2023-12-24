@@ -1,12 +1,12 @@
 <!-- app/views/home/description.html.erb -->
 <br>
 <br>
-<h1>質問の説明</h1>
+<h1><%= t('home.description_title') %></h1>
 <br>
 <br>
-<p>まずは君の必要な提出書類をみつけるね。</p>
+<p><%= t('home.find_documents_message') %></p>
 <br>
-<p>質問に答えてね！</p>
+<p><%= t('home.answer_questions_message') %></p>
 <br>
 
-<%= link_to '始めよう', questions_path, class: 'btn btn-success', style: 'font-size: 25px;' %>
+<%= link_to t('home.get_started_button'), questions_path, class: 'btn btn-success', style: 'font-size: 25px;' %>

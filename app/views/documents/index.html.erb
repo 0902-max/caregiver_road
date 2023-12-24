@@ -1,6 +1,6 @@
 <br>
 <br>
-<h1>書類一覧</h1>
+<h1><%= t('documents.index_title') %></h1>
 <br>
 <br>
 <% if @documents.any? %>
@@ -10,10 +10,10 @@
     <% end %>
   </ul>
 <% else %>
-  <p>まだ書類はありません。</p>
+  <p><%= t('documents.no_documents_message') %></p>
 <% end %>
 <br>
 <br>
 <% if defined? @choice && @choice.to_i == 5 %>
-  <%= link_to "介護福祉士の従事期間計算", "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn btn-success", style: "font-size: 22px; padding: 10px;" %>
+  <%= link_to t('documents.calculation_link'), "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn btn-success", style: "font-size: 22px; padding: 10px;" %>
 <% end %>

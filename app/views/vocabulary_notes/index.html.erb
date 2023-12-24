@@ -1,10 +1,10 @@
 <div class="text-center">
-<h1>介護福祉士への道　　単語帳</h1>
+<h1><%= t('vocabulary_notes.index_title') %></h1>
 <br>
 <br>
 <br>
-<p>作成した単語帳から単語を確認できるよ</p>
-<p>単語帳を複数作成する事もできるから、カテゴリーごとに自分で整理すれば分かりやすいよ！</p>
+<p><%= t('vocabulary_notes.introduction_1') %></p>
+<p><%= t('vocabulary_notes.introduction_2') %></p>
 <br>
 <br>
 <% @vocabulary_notes.each do |note| %>
@@ -13,5 +13,5 @@
 <br>
 <br>
 <br>
-<%= link_to '単語帳作成', new_vocabulary_note_path, class: "btn btn-primary" %>
+<%= link_to t('vocabulary_notes.create_note_button'), new_vocabulary_note_path, class: "btn btn-primary" %>
 </div>

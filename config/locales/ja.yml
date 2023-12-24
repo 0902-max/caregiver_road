@@ -1,11 +1,68 @@
 
 ja:
+  welcome:
+    index_title: '介護福祉士への道'
+    get_started_button: '始めよう！'
+  devise:
+    sessions:
+      new:
+        title: 'ログイン'
+        email_label: 'メールアドレス'
+        password_label: 'パスワード'
+        remember_me_label: 'ログイン状態を保持する'
+        submit_button: 'ログイン'
+        login_button: 'ログイン'
+    registrations:
+      new:
+        title: '新規登録'
+        email_label: 'メールアドレス'
+        password_label: 'パスワード'
+        password_confirmation_label: 'パスワード確認'
+        minimum_password_length: '%{count}文字以上'
+        submit_button: '登録'
+        registration_button: '新規登録'
+    passwords:
+      new:
+        forgot_password_link: 'パスワードを忘れた？'
+        title: 'パスワードをリセット'
+        email_label: 'メールアドレス'
+        submit_button: 'リセット用のメールを送信'
+    confirmations:
+      new:
+        confirmation_instructions_link: "確認メールが届かない場合"
+    unlocks:
+      new:
+        unlock_instructions_link: "アカウントのロック解除メールが届かない場合"
+  layouts:
+    application:
+      title: '介護福祉士への道'
+      logout: 'ログアウト'
+      top_page: 'トップページ'
+      sign_up: '新規登録'
+      log_in: 'ログイン'
+  homes:
+    top_title: '介護福祉士になろう！'
+    notification_button: '通知'
+    roadmap_link: 'ロードマップ'
+    grants_link: '補助金'
+    documents_link: '書類'
+    past_exams_link: '過去問'
+    vocabulary_notes_link: '単語帳'
+    description_title: '質問の説明'
+    find_documents_message: 'まずは君の必要な提出書類を見つけるね。'
+    answer_questions_message: '質問に答えてね！'
+    get_started_button: '始めよう'
+  documents:
+    index_title: '書類一覧'
+    no_documents_message: 'まだ書類はありません。'
+    calculation_link: '介護福祉士の従事期間計算'
   events:
     list_title: 'イベント一覧'
     title: 'タイトル'
     start_datetime: 'いつ'
     date_format: '%Y-%m-%d %H:%M'
     form:
+      title: '新しいタイトルを追加！'
       title_label: 'タイトル'
       start_datetime_label: 'いつから'
       submit_button: 'イベントを作成'
@@ -37,3 +94,19 @@ ja:
     meaning_label: '意味'
     create_button: '作成'
     back_button: '戻る'
+  vocabulary_notes:
+    index_title: '介護福祉士への道　　単語帳'
+    introduction_1: '作成した単語帳から単語を確認できるよ'
+    introduction_2: '単語帳を複数作成する事もできるから、カテゴリーごとに自分で整理すれば分かりやすいよ！'
+    view_note_button: '単語帳を見る'
+    create_note_button: '単語帳作成'
+    new_title: '単語帳を作成しよう！'
+    title_label: 'タイトル'
+    description_label: '内容'
+    create_button: '作成'
+    back_button: '戻る'
+    show_title: '単語帳詳細'
+    word_collection_title: '単語集'
+    word_label: 'WORD'
+    meaning_label: 'MEAN'
+    create_word_button: '単語作成'
