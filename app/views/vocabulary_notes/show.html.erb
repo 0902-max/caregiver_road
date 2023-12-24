@@ -3,14 +3,14 @@
 <br>
 <p><%= @vocabulary_note.description %></p>
 <br>
-<h2>単語集</h2>
+<h2><%= t('vocabulary_notes.word_collection_title') %></h2>
 <br>
 <% @vocabulary_entries.each do |entry| %>
-  <p><strong>WORD:</strong> <%= entry.word %></p>
-  <p> <strong>MEAN:</strong><%= entry.meaning %></p>
+  <p><strong><%= t('vocabulary_notes.word_label') %>:</strong> <%= entry.word %></p>
+  <p> <strong><%= t('vocabulary_notes.meaning_label') %>:</strong><%= entry.meaning %></p>
 <% end %>
 <br>
 <br>
-<%= link_to '戻る', vocabulary_notes_path, class: "btn btn-success" %>
+<%= link_to t('vocabulary_notes.back_button'), vocabulary_notes_path, class: "btn btn-success" %>
 
-<%= link_to '単語作成', new_vocabulary_note_vocabulary_entry_path(@vocabulary_note), class: "btn btn-primary" %>
+<%= link_to t('vocabulary_notes.create_word_button'), new_vocabulary_note_vocabulary_entry_path(@vocabulary_note), class: "btn btn-primary" %>

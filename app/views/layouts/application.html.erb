@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>介護福祉士への道</title>
+    <title><%= t('layouts.application.title') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,17 +15,17 @@
     <header>
       <% if user_signed_in? %>
         <li>
-          <%= link_to "ログアウト", users_sign_out_path, method: :delete, style: 'color: white;', class: 'link' %>
+          <%= link_to t('layouts.application.logout'), users_sign_out_path, method: :delete, style: 'color: white;', class: 'link' %>
         </li>
         <li>
-          <%= link_to "トップページ", root_path, style: 'color: white;', class: 'link' %>
+          <%= link_to t('layouts.application.top_page'), root_path, style: 'color: white;', class: 'link' %>
         </li>
       <% else %>
         <li>
-          <%= link_to "新規登録", new_user_registration_path, style: 'color: white;', class: 'link' %>
+          <%= link_to t('layouts.application.sign_up'), new_user_registration_path, style: 'color: white;', class: 'link' %>
         </li>
         <li>
-          <%= link_to "ログイン", new_user_session_path, style: 'color: white;', class: 'link' %>
+          <%= link_to t('layouts.application.log_in'), new_user_session_path, style: 'color: white;', class: 'link' %>
         </li>
       <% end %>
       </header>
