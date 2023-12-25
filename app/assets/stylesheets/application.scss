@@ -6,6 +6,7 @@
 
   body {
     background: linear-gradient(to bottom, #c4df9b, #ffffff); /* 背景色を指定してください */
+    background-attachment: fixed;
     font-family: 'Arial', sans-serif; /* 適切なフォントを指定してください */
     text-align: center; /* 文字をセンターに配置 */
     height: 100%;
@@ -13,7 +14,7 @@
 
   .link {
     text-decoration: none; /* 下線を消す */
-}
+  }
   
   /* 他のスタイルがあればここに追加してください */
   header {
@@ -53,7 +54,7 @@
     align-items: center; /* 垂直方向に中央揃え */
   }
 
-footer nav ul {
+  footer nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -67,223 +68,254 @@ footer nav ul {
 
   /* application.scss */
 
-.pagination-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px; /* 任意の余白を追加 */
-}
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* 任意の余白を追加 */
+  }
 
 /* あるいは、margin-topを直接.paginateに指定することもできます */
-.paginate {
-  margin-top: 40px; /* 任意の余白を追加 */
-}
+  .paginate {
+    margin-top: 40px; /* 任意の余白を追加 */
+  }
 
   
   /* app/assets/stylesheets/application.css (or application.scss) */
 
-.question-container {
-  text-align: center;
-  margin: 20px;
-}
+  .question-container {
+    text-align: center;
+    margin: 20px;
+  }
 
-.options {
-  margin-top: 20px;
-}
+  .options {
+    margin-top: 20px;
+  }
 
-label {
-  margin-right: 10px;
-}
+  label {
+    margin-right: 10px;
+  }
 
 /* app/assets/stylesheets/application.css (or application.scss) */
 
-.button-link {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff; /* ボタンの背景色 */
-  color: #fff; /* ボタンのテキスト色 */
-  text-decoration: none;
-  border-radius: 5px; /* ボタンの角を丸くする場合 */
-}
+  .button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* ボタンの背景色 */
+    color: #fff; /* ボタンのテキスト色 */
+    text-decoration: none;
+    border-radius: 5px; /* ボタンの角を丸くする場合 */
+  }
 
 /*
  *= require fullcalendar
 */
 
  /* スタイルを追加 */
- #calendar-container {
-  display: flex; /* 要素を横に並べる */
-}
-
-#calendar {
-  width: 50%; /* カレンダーの幅を指定 */
-  height: 500px;
-  aspect-ratio: 1;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-#sidebar {
-  width: 40%; /* サイドバーの幅を指定 */
-  padding: 0 20px; /* 適切な余白を指定 */
-}
-
-#event-list {
-  margin-bottom: 20px; /* イベントリストの下マージンを指定 */
-}
-
-#event-list ul {
-  list-style: none; /* リストスタイルをなくす */
-  padding: 0;
-}
-
-#event-list li {
-  margin-bottom: 10px; /* イベントリストアイテムのマージンを指定 */
-}
-
-#event-form {
-  margin-bottom: 20px; /* フォームの下マージンを指定 */
-}
-
-.past_index {
-  height: 100vh; /* 画面全体の高さを100%に設定 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  h1 {
-    margin-top: auto;
-    margin-bottom: 50px; /* 任意の余白を追加 */
+   #calendar-container {
+    display: flex; /* 要素を横に並べる */
   }
 
-  p {
+  #calendar {
+    width: 50%; /* カレンダーの幅を指定 */
+    height: 500px;
+    aspect-ratio: 1;
+    margin-left: 20px;
     margin-top: 20px;
-    margin-bottom: 50px; /* 任意の余白を追加 */
   }
-  .btn_09 {
-	  text-align: center;
-	  text-decoration: none;
-	  width: 120px;
-	  margin: auto;
-	  font-weight: bold;
-	  background: linear-gradient(to top, rgb(5, 130, 174), #27acd9);
-	  color: #fff;
-	  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-	  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-	  transition: 0.5s;
-    font-size: 1.7em; /* 任意のフォントサイズを指定 */
-  }
-  .btn_09:hover {
-    color: #fff;
-    opacity: 0.5;
-  }
-}
-/* あなたのCSSファイル（例：application.scss） */
-.text-center {
-  text-align: center; /* テキストを中央に配置 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* 画面全体の高さを埋めるために追加（オプション） */
-}
 
-#exam-text {
-  background-color: #dff4f8; /* Background color, adjust as needed */
-  margin-top: 20px;
-  padding: 10px; /* Optional: Add padding for better visual appearance */
-  display: inline-block; /* Make the background wrap around the content */
-  font-size: 24px;
-}
+  #sidebar {
+    width: 40%; /* サイドバーの幅を指定 */
+    padding: 0 20px; /* 適切な余白を指定 */
+  }
+
+  #event-list {
+    margin-bottom: 20px; /* イベントリストの下マージンを指定 */
+  }
+
+  #event-list ul {
+    list-style: none; /* リストスタイルをなくす */
+    padding: 0;
+  }
+
+  #event-list li {
+    margin-bottom: 10px; /* イベントリストアイテムのマージンを指定 */
+  }
+
+  #event-form {
+    margin-bottom: 20px; /* フォームの下マージンを指定 */
+  }
+
+  .past_index {
+    height: 100vh; /* 画面全体の高さを100%に設定 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      margin-top: auto;
+      margin-bottom: 50px; /* 任意の余白を追加 */
+    }
+
+    p {
+      margin-top: 20px;
+      margin-bottom: 50px; /* 任意の余白を追加 */
+    }
+    .btn_09 {
+	    text-align: center;
+	    text-decoration: none;
+	    width: 120px;
+	    margin: auto;
+	    font-weight: bold;
+	    background: linear-gradient(to top, rgb(5, 130, 174), #27acd9);
+	    color: #fff;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	    transition: 0.5s;
+      font-size: 1.7em; /* 任意のフォントサイズを指定 */
+    }
+    .btn_09:hover {
+      color: #fff;
+      opacity: 0.5;
+    }
+  }
+/* あなたのCSSファイル（例：application.scss） */
+  .text-center {
+    text-align: center; /* テキストを中央に配置 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 画面全体の高さを埋めるために追加（オプション） */
+  }
+
+  #exam-text {
+    background-color: #dff4f8; /* Background color, adjust as needed */
+    margin-top: 20px;
+    padding: 10px; /* Optional: Add padding for better visual appearance */
+    display: inline-block; /* Make the background wrap around the content */
+    font-size: 24px;
+  }
 
 /* リストアイテムのデフォルトのマーカー（黒い点）を非表示にする */
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
 /* 各リストアイテムのスタイル */
-li {
-  margin-bottom: 10px; /* リストアイテム間の余白を調整 */
-}
-.custom-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
   li {
     margin-bottom: 10px; /* リストアイテム間の余白を調整 */
-    font-size: 25px;
-    input[type="radio"] + label {
-      position: relative;
-      padding-left: 30px; /* 必要に応じて調整してください */
-      cursor: pointer;
-      display: inline-block;
-      line-height: 20px; /* 必要に応じて調整してください */
+  }
+  .custom-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 20px; /* 必要に応じて調整してください */
-        height: 20px; /* 必要に応じて調整してください */
-        border: 2px solid #333; /* 境界線の色 */
-        background-color: #fff; /* 背景色 */
-        border-radius: 50%; /* 円形にする */
+    li {
+      margin-bottom: 10px; /* リストアイテム間の余白を調整 */
+      font-size: 25px;
+      input[type="radio"] + label {
+        position: relative;
+        padding-left: 30px; /* 必要に応じて調整してください */
+        cursor: pointer;
+        display: inline-block;
+        line-height: 20px; /* 必要に応じて調整してください */
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20px; /* 必要に応じて調整してください */
+          height: 20px; /* 必要に応じて調整してください */
+          border: 2px solid #333; /* 境界線の色 */
+          background-color: #fff; /* 背景色 */
+          border-radius: 50%; /* 円形にする */
+        }
+      }
+
+      input[type="radio"]:checked + label:before {
+        background-color: #add8e6; /* 選択されたときの色、必要に応じて調整してください */
       }
     }
-
-    input[type="radio"]:checked + label:before {
-      background-color: #add8e6; /* 選択されたときの色、必要に応じて調整してください */
-    }
   }
-}
 
 /* styles.scss */
 
 /* 選択肢を横並びにするスタイル */
-.horizontal-choices {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
+  .horizontal-choices {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
 
 /* 各ボタンのスタイル */
-.choice-button {
-  flex: 1; /* 各ボタンの均等な幅にする */
-  margin: 0 15px; /* ボタン間の余白を調整 */
-  padding: 15px 20px; /* 上下左右の余白を調整 */
-  font-size: 30px; /* フォントサイズを調整 */
-  cursor: pointer;
-  border: 2px solid #333; /* 境界線の色 */
-  border-radius: 8px; /* 角丸にする */
-  transition: background-color 0.3s ease; /* ホバーエフェクトのスムーズな遷移 */
+  .choice-button {
+    flex: 1; /* 各ボタンの均等な幅にする */
+    margin: 0 15px; /* ボタン間の余白を調整 */
+    padding: 15px 20px; /* 上下左右の余白を調整 */
+    font-size: 30px; /* フォントサイズを調整 */
+    cursor: pointer;
+    border: 2px solid #333; /* 境界線の色 */
+    border-radius: 8px; /* 角丸にする */
+    transition: background-color 0.3s ease; /* ホバーエフェクトのスムーズな遷移 */
 
-  &:hover {
-    background-color: #add8e6; /* ホバー時の背景色、必要に応じて調整 */
+    &:hover {
+      background-color: #add8e6; /* ホバー時の背景色、必要に応じて調整 */
+    }
   }
-}
 /* 中央に配置するスタイル */
-.button-container {
-  display: flex;
-  justify-content: center;
-  height: 100vh; /* ビューポートの高さいっぱいに広がるようにする */
-}
+  .button-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* ビューポートの高さいっぱいに広がるようにする */
+  }
 
-.custom-h1 {
-  font-size: 36px; /* 必要に応じてサイズを調整 */
-}
+  .custom-h1 {
+    font-size: 36px; /* 必要に応じてサイズを調整 */
+  }
 
 /* p タグのスタイル */
-.custom-p {
-  font-size: 28px; /* 必要に応じてサイズを調整 */
-}
+  .custom-p {
+    font-size: 28px; /* 必要に応じてサイズを調整 */
+  }
 
-.large-text-list {
-  font-size: 25px; /* 任意の大きさに調整 */
+  .large-text-list {
+    font-size: 25px; /* 任意の大きさに調整 */
   /* 他のスタイルも必要に応じて追加 */
+  }
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px; /* 任意のフォントサイズを指定 */
+    background-attachment: fixed; /* 背景がスクロールしないように固定 */
+    background: linear-gradient(to bottom, #c4df9b, #ffffff); /* 背景色を指定してください */
+  }
+
+  header {
+    text-align: center;
+    padding: 10px; /* 適切なパディングを指定 */
+  }
+
+  header ul {
+    flex-direction: column; /* リストを縦に配置 */
+    align-items: center; /* アイテムを中央に配置 */
+  }
+
+  footer {
+    flex-direction: column; /* フッターアイテムを縦に配置 */
+    text-align: center;
+  }
+  
+  footer nav li {
+    display: block;
+    margin: 10px 0; /* フッターナビゲーションアイテムのマージン調整 */
+  }
+  
+
+  /* 他のスマートフォン向けのスタイルを追加 */
 }
