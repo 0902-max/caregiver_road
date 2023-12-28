@@ -26,8 +26,11 @@ Rails.application.routes.draw do
     member do
       post 'answer'
       get 'result'
+      get 'retry_incorrect_answers'
+      post 'retry_selected'
     end
   end
+  get 'past_exams/:id/retry_selected', to: 'past_exams#retry_selected', as: :retry_selected_for_exam
   resources :vocabulary_notes do
     resources :vocabulary_entries, only: [:new, :create]
   end

@@ -1,0 +1,20 @@
+<!-- app/views/past_exams/retry_selected.html.erb -->
+<div class="retry-container">
+  <h1><%= t('past_exams.retry_title') %></h1>
+
+  <p>ID: <%= @past_exam.id %></p>
+  <p>Category: <%= @past_exam.exam_category %></p>
+  <h2><%= @past_exam.exam_text %></h2>
+
+  <%= form_with(model: @user_past_exam, url: retry_selected_past_exam_path(@past_exam), method: 'post') do |form| %>
+    <ul class="custom-list">
+      <li><%= form.radio_button :selected_option, 'a' %> <%= @past_exam.option_a %></li>
+      <li><%= form.radio_button :selected_option, 'b' %> <%= @past_exam.option_b %></li>
+      <li><%= form.radio_button :selected_option, 'c' %> <%= @past_exam.option_c %></li>
+      <li><%= form.radio_button :selected_option, 'd' %> <%= @past_exam.option_d %></li>
+      <li><%= form.radio_button :selected_option, 'e' %> <%= @past_exam.option_e %></li>
+    </ul>
+
+    <%= form.submit t('past_exams.answer_button'), class: "btn btn-success" %>
+  <% end %>
+</div>
