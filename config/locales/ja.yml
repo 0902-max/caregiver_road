@@ -107,6 +107,6 @@ ja:
     back_button: '戻る'
     show_title: '単語帳詳細'
     word_collection_title: '単語集'
-    word_label: 'WORD'
-    meaning_label: 'MEAN'
+    word_label: '単語'
+    meaning_label: '意味'
     create_word_button: '単語作成'
