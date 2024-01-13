@@ -15,5 +15,5 @@
 <br>
 <br>
 <% if defined? @choice && @choice.to_i == 5 %>
-  <%= link_to t('documents.calculation_link'), "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn btn-success", style: "font-size: 22px; padding: 10px;" %>
+  <%= link_to t('documents.calculation_link'), "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn btn-success", style: "font-size: 22px; padding: 10px;", onclick: "return confirm('外部サイトに移動します。よろしいですか？');" %>
 <% end %>
