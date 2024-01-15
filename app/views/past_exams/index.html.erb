@@ -11,7 +11,7 @@
     <p><%= t('past_exams.last_result') %>  <%= @user_past_score %></p>
   <% end %>
   <!-- 再挑戦リンク -->
-  <%= link_to '不正解一覧', retry_incorrect_answers_past_exam_path(@past_exam), class: 'btn btn-primary' %>
+  <%= link_to '不正解一覧', retry_incorrect_answers_past_exam_path(@past_exams), class: 'btn btn-primary' %>
 
   <%= link_to 'スタート', past_exam_path(@past_exam), class: 'btn_09', id: 'start-button' %>
 </div>

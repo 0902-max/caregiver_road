@@ -3,19 +3,21 @@ class PastExamsController < ApplicationController
   
   def index
     @past_exams = PastExam.all
-    @past_exam = @past_exams.first
     if user_signed_in?
       # ユーザーがログインしている場合、past_scoreを取得
       @user_past_score = current_user.past_score
     end
     @incorrect_attempts = current_user.incorrect_attempts
     @past_exam_attempts = @incorrect_attempts.map(&:past_exam)
+    # ランダムな PastExam を取得して @past_exam を設定
+    @past_exam = @past_exams.sample
   end
 
   def show
     @past_exam = PastExam.find(params[:id])
     @user_past_exam = UserPastExamAttempt.new(past_exam: @past_exam, user: current_user)
-    #@past_exam.current_exam = @user_past_exam.past_exam
+    # セッションに問題数の進捗があれば取得、なければ初期化
+    @question_count = session[:question_count] || 0
   end
 
   def answer
@@ -50,14 +52,27 @@ class PastExamsController < ApplicationController
     # current_exam を取得
     current_exam = @past_exam
 
-    # 次の問題があるかどうかを判定
-    next_exam = @past_exam.next_exam(current_exam)
+    # セッションに問題数のカウントがあれば増やす、なければ初期化
+    session[:question_count] ||= 0
+    session[:question_count] += 1
 
-    if next_exam
-      # 次の問題がある場合は、その問題を表示
-      redirect_to past_exam_path(next_exam)
+    if session[:question_count] < 20
+      # 次の問題のIDを取得
+      next_exam_id = @past_exam.random_next_exam_id
+
+      if next_exam_id
+        # 次の問題がある場合は、その問題を表示
+        redirect_to past_exam_path(next_exam_id)
+      else
+        # 次の問題がない場合は、結果ページへ遷移
+        redirect_to result_past_exam_path(@past_exam)
+      end
     else
-      # 次の問題がない場合は、結果ページへ遷移
+      # 20問解いたら結果ページへ遷移
+
+      # 問題数のカウントをクリア
+      session[:question_count] = nil
+
       redirect_to result_past_exam_path(@past_exam)
     end
   end
@@ -100,6 +115,4 @@ class PastExamsController < ApplicationController
       redirect_to retry_incorrect_answers_past_exam_path(@past_exam)
     end
   end
-
-  # ... (other actions)
 end
