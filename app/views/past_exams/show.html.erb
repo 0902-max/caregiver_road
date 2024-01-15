@@ -1,5 +1,6 @@
 <div class="exam-container">
   <h1 id="exam-text"><%= @past_exam.exam_text %></h1>
+  <h1>Question <%= @question_count %>/20</h1>
 
   <!-- 選択肢表示 -->
   <%= form_with(model: @past_exam, url: answer_past_exam_path(@past_exam), method: 'post') do |form| %>
