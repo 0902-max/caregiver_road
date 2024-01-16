@@ -1,17 +1,20 @@
-<header>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to t('layouts.application.logout'), users_sign_out_path, method: :delete, style: 'color: white;', class: 'link' %>
-    </li>
-    <li>
-      <%= link_to t('layouts.application.top_page'), root_path, style: 'color: white;', class: 'link' %>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to t('layouts.application.sign_up'), new_user_registration_path, style: 'color: white;', class: 'link' %>
-    </li>
-    <li>
-      <%= link_to t('layouts.application.log_in'), new_user_session_path, style: 'color: white;', class: 'link' %>
-    </li>
-  <% end %>
-</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand text-dark" href="#">Caregiver_Road</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+        <% if user_signed_in? %>
+            <a class="nav-link text-dark" href="<%= users_sign_out_path %>">ログアウト</a>
+            <a class="nav-link text-dark" href="<%= root_path %>">トップページ</a>
+            <a class="nav-link text-dark" href="<%= events_path %>"> <%= t('homes.roadmap_link') %></a>
+            <a class="nav-link text-dark" href="<%= grants_path %>"> <%= t('homes.grants_link') %></a>
+            <a class="nav-link text-dark" href="<%= documents_path %>"> <%= t('homes.documents_link') %></a>
+            <a class="nav-link text-dark" href="<%= past_exams_path %>"> <%= t('homes.past_exams_link') %></a>
+            <a class="nav-link text-dark" href="<%= vocabulary_notes_path %>"> <%= t('homes.vocabulary_notes_link') %></a>
+        <% else %>
+            <a class="nav-link text-dark" href="<%= new_user_registration_path %>">新規登録</a>
+            <a class="nav-link text-dark" href="<%= new_user_session_path %>">ログイン</a>
+        <% end %>
+    </div>
+</nav>
