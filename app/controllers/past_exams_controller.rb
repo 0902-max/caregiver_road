@@ -56,24 +56,39 @@ class PastExamsController < ApplicationController
     session[:question_count] ||= 0
     session[:question_count] += 1
 
-    if session[:question_count] < 20
-      # 次の問題のIDを取得
-      next_exam_id = @past_exam.random_next_exam_id
+    redirect_to explanation_past_exam_path(@past_exam)
+  end
 
-      if next_exam_id
-        # 次の問題がある場合は、その問題を表示
-        redirect_to past_exam_path(next_exam_id)
-      else
-        # 次の問題がない場合は、結果ページへ遷移
-        redirect_to result_past_exam_path(@past_exam)
-      end
+  def explanation
+    @past_exam = PastExam.find(params[:id])
+  
+    # データベースから回答情報を取得
+    @user_past_exam = current_user.user_past_exam_attempts.find_by(past_exam: @past_exam)
+  
+    if @user_past_exam
+      # 回答情報が存在する場合、正解かどうかを判定
+      @is_correct = @user_past_exam.is_correct
+      @explanation = @past_exam.explanation
     else
-      # 20問解いたら結果ページへ遷移
+      # 回答情報が存在しない場合
+      @is_correct = false
+      @explanation = 'まだ回答していません。'
+    end
+  end
 
-      # 問題数のカウントをクリア
-      session[:question_count] = nil
-
-      redirect_to result_past_exam_path(@past_exam)
+  def next_question
+    # セッションに問題数のカウントがあれば取得、なければ初期化
+    session[:exam_count] ||= 0
+    # ランダムな次の問題のIDを取得
+    next_exam_id = PastExam.where.not(id: params[:id]).pluck(:id).sample
+    if next_exam_id && session[:exam_count] < 20
+      # 次の問題がある場合は、問題数のカウントを増やしてその問題を表示
+      session[:exam_count] += 1
+      redirect_to past_exam_path(next_exam_id)
+    else
+      # 次の問題がない場合または問題数が20問に達した場合は結果ページへ遷移
+      session[:exam_count] = nil  # 問題数のカウントをクリア
+      redirect_to result_past_exam_path
     end
   end
 

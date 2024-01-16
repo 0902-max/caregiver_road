@@ -16,35 +16,3 @@
     <%= form.submit t('past_exams.answer_button'), onclick: 'submitAnswer()', class: "btn btn-success" %>
   <% end %>
 </div>
-<script>
-  function submitAnswer() {
-    var selectedOption = document.querySelector('input[name="selected_option"]:checked');
-    // 非同期通信
-    var formData = new FormData(document.getElementById('attempt-form'));
-
-    fetch('<%= answer_past_exam_path(@past_exam) %>', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'X-CSRF-Token': '<%= form_authenticity_token %>',
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        if (data.next_exam_id) {
-          // 次の問題がある場合は、次の問題へ遷移
-          window.location.href = '<%= past_exam_path(@past_exam) %>' + '/' + data.next_exam_id;
-        } else if (data.result_path) {
-          // 次の問題がない場合は、結果ページへ遷移
-          window.location.href = '<%= result_past_exam_path(@past_exam) %>';
-        }
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  }
-</script>
