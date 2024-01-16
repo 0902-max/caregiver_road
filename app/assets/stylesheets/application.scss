@@ -16,54 +16,8 @@
     text-decoration: none; /* 下線を消す */
   }
   
-  /* 他のスタイルがあればここに追加してください */
-  header {
-    background: #D2B48C; /* ヘッダーの背景色を指定してください */
-    display: flex;
-    padding: 10px 20px;
-    text-align: right;
-   }
-
-   header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  header li {
-    margin-left: 20px; /* 各リストアイテムの左側の余白を設定 */
-    list-style: none;
-  }
-  
-  
   main {
     flex: 1; /* main セクションが残りのスペースを占めるようにします */
-  }
-  
-  footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #D2B48C; /* フッターの背景色を指定してください */
-    color: #fff; /* フッターの文字色を指定してください */
-    padding: 10px; /* 適切なパディングを指定してください */
-    text-align: center; /* ナビゲーションを中央に配置 */
-    display: flex; /* flexbox を使用する */
-    justify-content: space-around; /* 要素を等間隔に配置 */
-    align-items: center; /* 垂直方向に中央揃え */
-  }
-
-  footer nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  footer nav li {
-    display: inline-block;
-    margin: 0 30px; /* 適切なマージンを追加して適切な間隔を調整します */
   }
 
   /* application.scss */
@@ -282,33 +236,3 @@
   /* 他のスタイルも必要に応じて追加 */
   }
 
-@media (max-width: 767px) {
-  body {
-    font-size: 14px; /* 任意のフォントサイズを指定 */
-    background-attachment: fixed; /* 背景がスクロールしないように固定 */
-    background: linear-gradient(to bottom, #c4df9b, #ffffff); /* 背景色を指定してください */
-  }
-
-  header {
-    text-align: center;
-    padding: 10px; /* 適切なパディングを指定 */
-  }
-
-  header ul {
-    flex-direction: column; /* リストを縦に配置 */
-    align-items: center; /* アイテムを中央に配置 */
-  }
-
-  footer {
-    flex-direction: column; /* フッターアイテムを縦に配置 */
-    text-align: center;
-  }
-  
-  footer nav li {
-    display: block;
-    margin: 10px 0; /* フッターナビゲーションアイテムのマージン調整 */
-  }
-  
-
-  /* 他のスマートフォン向けのスタイルを追加 */
-}
