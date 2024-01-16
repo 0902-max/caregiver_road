@@ -17,7 +17,7 @@ class PastExamsController < ApplicationController
     @past_exam = PastExam.find(params[:id])
     @user_past_exam = UserPastExamAttempt.new(past_exam: @past_exam, user: current_user)
     # セッションに問題数の進捗があれば取得、なければ初期化
-    @question_count = session[:question_count] || 0
+    @question_count = session[:question_count] || 1
   end
 
   def answer
@@ -53,7 +53,7 @@ class PastExamsController < ApplicationController
     current_exam = @past_exam
 
     # セッションに問題数のカウントがあれば増やす、なければ初期化
-    session[:question_count] ||= 0
+    session[:question_count] ||= 1
     session[:question_count] += 1
 
     redirect_to explanation_past_exam_path(@past_exam)
@@ -77,17 +77,14 @@ class PastExamsController < ApplicationController
   end
 
   def next_question
-    # セッションに問題数のカウントがあれば取得、なければ初期化
-    session[:exam_count] ||= 0
     # ランダムな次の問題のIDを取得
     next_exam_id = PastExam.where.not(id: params[:id]).pluck(:id).sample
-    if next_exam_id && session[:exam_count] < 20
+    if next_exam_id && session[:question_count] < 21
       # 次の問題がある場合は、問題数のカウントを増やしてその問題を表示
-      session[:exam_count] += 1
       redirect_to past_exam_path(next_exam_id)
     else
       # 次の問題がない場合または問題数が20問に達した場合は結果ページへ遷移
-      session[:exam_count] = nil  # 問題数のカウントをクリア
+      session[:question_count] = nil  # 問題数のカウントをクリア
       redirect_to result_past_exam_path
     end
   end
