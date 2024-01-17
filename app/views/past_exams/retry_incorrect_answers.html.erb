@@ -4,20 +4,22 @@
 
   <% displayed_ids = Set.new %>
   <% if @incorrect_attempts.present? %>
-    <ul>
+    <div class="row">
       <% @incorrect_attempts.each do |attempt| %>
-        <% unless displayed_ids.include?(attempt.past_exam.id) %>
-          <li>
+        <div class="col-md-4 mb-4">
+          <div class="retry-item">
             <p>ID: <%= attempt.past_exam.id %></p>
             <p>Category: <%= attempt.past_exam.exam_category %></p>
             <%= link_to t('past_exams.retry_button'), retry_selected_past_exam_path(attempt.past_exam), class: 'btn btn-primary' %>
-          </li>
-          <% displayed_ids.add(attempt.past_exam.id) %>
-        <% end %>
+          </div>
+        </div>
       <% end %>
-    </ul>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+      <%= paginate @incorrect_attempts %>
+    </div>
   <% else %>
     <p><%= t('past_exams.no_incorrect_attempts') %></p>
   <% end %>
 </div>
-

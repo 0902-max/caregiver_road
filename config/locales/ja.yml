@@ -79,6 +79,8 @@ ja:
     history_title: '過去問の結果（履歴）'
     last_result: '前回の結果:'
     answer_button: '回答する'
+    retry_title: 再挑戦
+    retry_button: 挑戦 
   result_page:
     title: '結果ページ'
     score_text: 'スコア:'
@@ -95,7 +97,7 @@ ja:
     create_button: '作成'
     back_button: '戻る'
   vocabulary_notes:
-    index_title: '介護福祉士への道　　単語帳'
+    index_title: '介護福祉士への道  単語帳'
     introduction_1: '作成した単語帳から単語を確認できるよ'
     introduction_2: '単語帳を複数作成する事もできるから、カテゴリーごとに自分で整理すれば分かりやすいよ！'
     view_note_button: '単語帳を見る'
