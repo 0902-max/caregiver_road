@@ -99,7 +99,13 @@ class PastExamsController < ApplicationController
   end
 
   def retry_incorrect_answers
-    @incorrect_attempts = current_user.user_past_exam_attempts.where(is_correct: false).includes(:past_exam)
+     # idの小さい順に12個ずつ表示するページネーション
+    @incorrect_attempts = current_user.user_past_exam_attempts
+    .where(is_correct: false)
+    .includes(:past_exam)
+    .order(id: :asc)
+    .page(params[:page])
+    .per(12)
     @user_past_exam = UserPastExamAttempt.new(user: current_user)
 
     # 以前の回答があればそれを取得して @user_past_exam にセット
@@ -122,8 +128,7 @@ class PastExamsController < ApplicationController
         is_correct: is_correct,
         answered_at: Time.current
       )
-
-      flash[:notice] = is_correct ? t('past_exams.correct_answer_message') : t('past_exams.incorrect_answer_message')
+      flash[:notice] = is_correct ? "正解です！" : "不正解です。"
       redirect_to retry_incorrect_answers_past_exam_path(@past_exam)
     end
   end
