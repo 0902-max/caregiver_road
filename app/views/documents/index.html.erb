@@ -4,7 +4,7 @@
 <br>
 <br>
 <% if @documents.any? %>
-  <ul class="large-text-list">
+  <ul class="large-text-list" style="list-style: none;">
     <% @documents.each do |document| %>
       <li><%= document.document_name %> (選択肢: <%= document.choice.body %>)</li>
     <% end %>
