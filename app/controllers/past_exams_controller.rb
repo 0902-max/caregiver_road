@@ -105,7 +105,7 @@ class PastExamsController < ApplicationController
     .includes(:past_exam)
     .order(id: :asc)
     .page(params[:page])
-    .per(12)
+    .per(9)
     @user_past_exam = UserPastExamAttempt.new(user: current_user)
 
     # 以前の回答があればそれを取得して @user_past_exam にセット

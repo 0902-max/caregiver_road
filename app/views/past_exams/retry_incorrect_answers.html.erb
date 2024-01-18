@@ -1,5 +1,10 @@
 <!-- app/views/past_exams/retry_incorrect_answers.html.erb -->
 <div class="retry-container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key == :notice ? 'success' : 'danger' %>">
+      <%= value %>
+    </div>
+  <% end %>
   <h1><%= t('past_exams.retry_title') %></h1>
 
   <% displayed_ids = Set.new %>

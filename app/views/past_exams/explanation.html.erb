@@ -1,11 +1,14 @@
 <!-- views/past_exams/explanation.html.erb -->
-
-<h1><%= @is_correct %></h1>
-<p><%= @explanation %></p>
+<br>
+<br>
 <% if @is_correct %>
-  <p>正解だよ！</p>
+  <h1>正解だよ！</h1>
 <% else %>
-  <p>残念。不正解だよ</p>
+  <h1>残念。不正解だよ</h1>
 <% end %>
-
+<br>
+<br>
+<h2 id="exam-text"><%= @explanation %></h2>
+<br>
+<br>
 <%= link_to '次へ', next_question_past_exam_path(@past_exam), class: 'btn btn-primary' %>
