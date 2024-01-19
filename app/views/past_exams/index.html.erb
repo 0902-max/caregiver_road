@@ -6,7 +6,7 @@
   <p><%= t('past_exams.description') %></p>
 
   <!-- 過去のスコア表示 -->
-  <h2><%= t('past_exams.history_title') %></h2>
+  <h2 class="custom-h2"><%= t('past_exams.history_title') %></h2>
   <% if user_signed_in? %>
     <p><%= t('past_exams.last_result') %>  <%= @user_past_score %></p>
   <% end %>

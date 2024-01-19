@@ -236,15 +236,15 @@
   /* 他のスタイルも必要に応じて追加 */
   }
   
-  h2 {
+  .custom-h2 {
     position: relative;
     display: inline-block;
     padding: 0 65px;
     text-align: center;
   }
   
-  h2:before,
-  h2:after {
+  .custom-h2:before,
+  .custom-h2:after {
     position: absolute;
     top: calc(50% - 3px);
     width: 50px;
@@ -254,11 +254,11 @@
     border-bottom: solid 2px #000;
   }
   
-  h2:before {
+  .custom-h2:before {
     left: 0;
   }
   
-  h2:after {
+  .custom-h2:after {
     right: 0;
   }
   

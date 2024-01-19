@@ -5,6 +5,9 @@ ja:
     get_started_button: '始めよう！'
   devise:
     sessions:
+      user:
+        signed_in: 'ログインしました'
+      signed_in: 'ログインしました'
       new:
         title: 'ログイン'
         email_label: 'メールアドレス'
@@ -80,7 +83,8 @@ ja:
     last_result: '前回の結果:'
     answer_button: '回答する'
     retry_title: 再挑戦
-    retry_button: 挑戦 
+    retry_button: 挑戦
+    no_incorrect_attempts: 間違った問題がないよ！
   result_page:
     title: '結果ページ'
     score_text: 'スコア:'
