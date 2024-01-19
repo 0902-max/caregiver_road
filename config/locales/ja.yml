@@ -7,7 +7,11 @@ ja:
     sessions:
       user:
         signed_in: 'ログインしました'
+        signed_out: "ログアウトしました。"
+        signed_up: "新規ユーザー登録が完了しました。"
       signed_in: 'ログインしました'
+      signed_out: "ログアウトしました。"
+      signed_up: "新規ユーザー登録が完了しました。"
       new:
         title: 'ログイン'
         email_label: 'メールアドレス'
@@ -116,3 +120,5 @@ ja:
     word_label: '単語'
     meaning_label: '意味'
     create_word_button: '単語作成'
+  Vocabulary_note_created_successfully: "単語帳が正常に作成されました。"
+  Vocabulary_entry_created_successfully: '単語が正常に作成されました。'
