@@ -5,18 +5,12 @@
   }
 
   body {
-    background: url('../images/river_00006.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(to bottom, #c4df9b, #ffffff);
+    background-attachment: fixed;
     font-family: 'Arial', sans-serif;
     text-align: center;
   }
   
-  /* Topページ用のスタイル（cherry-blossom_00014.jpgを適用） */
-body.top-page {
-  background: url('../images/cherry-blossom_00014.jpg') no-repeat center center fixed;
-  background-size: cover;
-  /* 他のスタイルプロパティも必要に応じて追加できます */
-}
 
   .link {
     text-decoration: none; /* 下線を消す */
