@@ -64,23 +64,20 @@
  *= require fullcalendar
 */
 
- /* スタイルを追加 */
-   #calendar-container {
-    display: flex; /* 要素を横に並べる */
-  }
+#calendar-container {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  height: 100vh; /* Use the full height of the viewport */
+}
 
-  #calendar {
-    width: 50%; /* カレンダーの幅を指定 */
-    height: 500px;
-    aspect-ratio: 1;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
+#calendar {
+  width: 70%; /* Adjust the calendar width as needed */
+  max-width: 800px; /* Set a maximum width if desired */
+  height: 500px;
+  aspect-ratio: 1;
+}
 
-  #sidebar {
-    width: 40%; /* サイドバーの幅を指定 */
-    padding: 0 20px; /* 適切な余白を指定 */
-  }
 
   #event-list {
     margin-bottom: 20px; /* イベントリストの下マージンを指定 */
@@ -261,4 +258,3 @@
   .custom-h2:after {
     right: 0;
   }
-  
