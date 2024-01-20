@@ -69,9 +69,9 @@ ja:
     start_datetime: 'いつ'
     date_format: '%Y-%m-%d %H:%M'
     form:
-      title: '新しいタイトルを追加！'
-      title_label: 'タイトル'
-      start_datetime_label: 'いつから'
+      title: '新しいイベントを追加！'
+      title_label: 'イベント'
+      start_datetime_label: '始まる？'
       submit_button: 'イベントを作成'
   grants:
     search_page_title: '補助金検索ページ'

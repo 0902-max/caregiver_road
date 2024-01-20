@@ -33,29 +33,30 @@
 </head>
 <div class="container-fluid mt-4">
     <div class="row">
-        <div class="col-md-6">
-            <div id="event-list">
-                <h1><%= t('events.list_title') %></h1>
-                <ul>
-                    <% @events.each do |event| %>
-                        <li><%= t('events.title') %>: <%= event.title %></li>
-                        <li><%= t('events.start_datetime') %>: <%= event.start_datetime.strftime(t('events.date_format')) %></li>
-                        <br>
-                    <% end %>
-                </ul>
-            </div>
-        </div>
-
+        <!-- Left Column: Event Form and Calendar -->
         <div class="col-md-6">
             <div id="event-form">
                 <%= render 'form' %>
             </div>
+            <div id="calendar" class="mx-auto" style="width: 80%; height: 600px;"></div>
         </div>
-    </div>
 
-    <div class="row mt-4">
-        <div class="col">
-            <div id="calendar"></div>
+        <!-- Right Column: Event List -->
+        <div class="col-md-4 offset-md-1">
+            <div id="event-list" class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= t('events.list_title') %></h5>
+                    <ul class="list-group">
+                        <% @events.each do |event| %>
+                            <li class="list-group-item">
+                                <%= event.title %>
+                                <br>
+                                <%= event.start_datetime.strftime(t('events.date_format')) %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
