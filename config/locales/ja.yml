@@ -118,7 +118,7 @@ ja:
     show_title: '単語帳詳細'
     word_collection_title: '単語集'
     word_label: '単語'
-    meaning_label: '意味'
+    meaning_label: '正解'
     create_word_button: '単語作成'
   flash_messages:
     vocabulary_note_created_successfully: '単語帳が正常に作成されました。'

@@ -5,41 +5,35 @@
 <br>
 <h2><%= t('vocabulary_notes.word_collection_title') %></h2>
 <br>
-<% @vocabulary_entries.each do |entry| %>
-  <div class="word-entry">
-  <p><strong><%= t('vocabulary_notes.word_label') %>:</strong> 
-  <button class="word-display" data-meaning="<%= entry.meaning %>"><%= entry.word %></button>
-  </p>
-  <p class="meaning-display" style="display:none;">
-      <strong><%= t('vocabulary_notes.meaning_label') %>:</strong>
-  </p>
+<div class="container">
+  <div class="row">
+    <% @vocabulary_entries.each do |entry| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= entry.word %></h5>
+            <p class="card-text meaning-display" style="display:none;"><%= entry.meaning %></p>
+            <button class="btn toggle-meaning-btn" onclick="toggleMeaning(this)"><%= t('vocabulary_notes.meaning_label') %></button>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 <br>
 <br>
 <%= link_to t('vocabulary_notes.back_button'), vocabulary_notes_path, class: "btn btn-success" %>
 
 <%= link_to t('vocabulary_notes.create_word_button'), new_vocabulary_note_vocabulary_entry_path(@vocabulary_note), class: "btn btn-primary" %>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var wordDisplays = document.querySelectorAll('.word-display');
-
-  wordDisplays.forEach(function(wordDisplay) {
-    wordDisplay.addEventListener('click', function() {
-      var meaningDisplay = this.closest('.word-entry').querySelector('.meaning-display');
-      var meaning = this.getAttribute('data-meaning');
-
-      // クリックされた単語エントリーの意味を表示・非表示切り替え
-      if (meaningDisplay.style.display === 'none' || meaningDisplay.style.display === '') {
-        // クリックされた単語エントリーの意味を表示
-        meaningDisplay.innerHTML = '<strong>内容:</strong> ' + meaning;
-        meaningDisplay.style.display = 'block';
-      } else {
-        // 非表示の場合は何も表示しない
-        meaningDisplay.innerHTML = '';
-        meaningDisplay.style.display = 'none';
-      }
-    });
-  });
-});
+  function toggleMeaning(button) {
+    var cardBody = button.parentNode;
+    var meaningDisplay = cardBody.querySelector('.meaning-display');
+    if (meaningDisplay.style.display === 'none') {
+      meaningDisplay.style.display = 'block';
+    } else {
+      meaningDisplay.style.display = 'none';
+    }
+  }
 </script>
