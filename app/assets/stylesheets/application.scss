@@ -256,29 +256,3 @@
   .custom-h2:after {
     right: 0;
   }
-
-  .mb-10 {
-    margin-bottom: 2.5rem;
-  }
-  .mx-3 {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-  }
-  .py-10{
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-  .p-6{
-    padding: 1.5rem;
-  }
-  .rounded-lg{
-    border-radius: 0.5rem;
-  }
-  .bg-white{
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255/var(--tw-bg-opacity));
-  }
-  .shadow-xl {
-    --tw-shadow: 0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a;
-    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);
-}
