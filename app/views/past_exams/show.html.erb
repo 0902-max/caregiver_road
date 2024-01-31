@@ -5,13 +5,37 @@
   <!-- 選択肢表示 -->
   <%= form_with(model: @past_exam, url: answer_past_exam_path(@past_exam), method: 'post') do |form| %>
     <ul class="custom-list">
-      <li><%= form.radio_button :selected_option, 'a' %> <%= @past_exam.option_a %></li>
-      <li><%= form.radio_button :selected_option, 'b' %> <%= @past_exam.option_b %></li>
-      <li><%= form.radio_button :selected_option, 'c' %> <%= @past_exam.option_c %></li>
-      <li><%= form.radio_button :selected_option, 'd' %> <%= @past_exam.option_d %></li>
-      <li><%= form.radio_button :selected_option, 'e' %> <%= @past_exam.option_e %></li>
+      <li class="text-customGreen5 bg-customGreen6 border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-white hover:drop-shadow-lg">
+        <%= form.label :selected_option_a do %>
+          <%= form.radio_button :selected_option, 'a', class: 'hidden' %>
+          <%= @past_exam.option_a %>
+        <% end %>
+      </li>
+      <li class="text-customGreen5 bg-customGreen6 border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-white hover:drop-shadow-lg">
+        <%= form.label :selected_option_b do %>
+          <%= form.radio_button :selected_option, 'b', class: 'hidden' %>
+          <%= @past_exam.option_b %>
+        <% end %>
+      </li>
+      <li class="text-customGreen5 bg-customGreen6 border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-white hover:drop-shadow-lg">
+        <%= form.label :selected_option_c do %>
+          <%= form.radio_button :selected_option, 'c', class: 'hidden' %>
+          <%= @past_exam.option_c %>
+        <% end %>
+      </li>
+      <li class="text-customGreen5 bg-customGreen6 border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-white hover:drop-shadow-lg">
+        <%= form.label :selected_option_d do %>
+          <%= form.radio_button :selected_option, 'd', class: 'hidden' %>
+          <%= @past_exam.option_d %>
+        <% end %>
+      </li>
+      <li class="text-customGreen5 bg-customGreen6 border-2 border-customGreen2 rounded-3xl drop-shadow-lg hover:bg-white hover:drop-shadow-lg">
+        <%= form.label :selected_option_e do %>
+          <%= form.radio_button :selected_option, 'e', class: 'hidden' %>
+          <%= @past_exam.option_e %>
+        <% end %>
+      </li>
     </ul>
-
     <!-- 回答ボタン -->
     <%= form.submit t('past_exams.answer_button'), onclick: 'submitAnswer()', class: "btn btn-success" %>
   <% end %>
