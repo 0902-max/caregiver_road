@@ -20,6 +20,7 @@ ja:
         submit_button: 'ログイン'
         login_button: 'ログイン'
     registrations:
+      signed_up: '新規登録できました'
       new:
         title: '新規登録'
         email_label: 'メールアドレス'
