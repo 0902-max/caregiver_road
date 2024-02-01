@@ -6,29 +6,29 @@
         <a class="navbar-brand text-dark ms-3" href="<%= root_path %>" style="text-align: left;">Caregiver_Road</a>
       </div>
       <!-- ログインリンク等を右詰めに配置 -->
-      <div class="col-md-6 text-end" style="margin-right: 5px; >
-        <ul class="navbar-nav d-flex flex-row justify-content-end">
+      <div class="col-md-6">
+        <ul class="navbar-nav d-flex flex-row justify-content-end" style="margin-right: -5px;">
           <% if user_signed_in? %>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="<%= events_path %>"> <%= t('homes.roadmap_link') %></a>
+            <li class="nav-item me-3">
+             <a class="nav-link text-dark" href="<%= events_path %>"> <%= t('homes.roadmap_link') %></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link text-dark" href="<%= grants_path %>"> <%= t('homes.grants_link') %></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link text-dark" href="<%= documents_path %>"> <%= t('homes.documents_link') %></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link text-dark" href="<%= past_exams_path %>"> <%= t('homes.past_exams_link') %></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link text-dark" href="<%= vocabulary_notes_path %>"> <%= t('homes.vocabulary_notes_link') %></a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark" href="<%= users_sign_out_path %>">ログアウト</a>
             </li>
           <% else %>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link text-dark" href="<%= new_user_registration_path %>">新規登録</a>
             </li>
             <li class="nav-item">
