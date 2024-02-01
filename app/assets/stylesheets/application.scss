@@ -1,25 +1,4 @@
 @import "bootstrap";
- html, body {
-    height: 100%;
-    margin: 0;
-  }
-
-  body {
-    background: linear-gradient(to bottom, #c4df9b, #ffffff);
-    background-attachment: fixed;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-  }
-  
-
-  .link {
-    text-decoration: none; /* 下線を消す */
-  }
-  
-  main {
-    flex: 1; /* main セクションが残りのスペースを占めるようにします */
-  }
-
   /* application.scss */
 
   .pagination-container {
@@ -129,16 +108,6 @@
       opacity: 0.5;
     }
   }
-/* あなたのCSSファイル（例：application.scss） */
-  .text-center {
-    text-align: center; /* テキストを中央に配置 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 20vh; /* 画面全体の高さを埋めるために追加（オプション） */
-  }
-
   #exam-text {
     background-color: #dff4f8; /* Background color, adjust as needed */
     margin-top: 20px;
@@ -146,46 +115,6 @@
     display: inline-block; /* Make the background wrap around the content */
     font-size: 24px;
   }
-
-/* 各リストアイテムのスタイル */
-  li {
-    margin-bottom: 10px; /* リストアイテム間の余白を調整 */
-  }
-  .custom-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin-bottom: 10px; /* リストアイテム間の余白を調整 */
-      font-size: 25px;
-      input[type="radio"] + label {
-        position: relative;
-        padding-left: 30px; /* 必要に応じて調整してください */
-        cursor: pointer;
-        display: inline-block;
-        line-height: 20px; /* 必要に応じて調整してください */
-
-        &:before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 20px; /* 必要に応じて調整してください */
-          height: 20px; /* 必要に応じて調整してください */
-          border: 2px solid #333; /* 境界線の色 */
-          background-color: #fff; /* 背景色 */
-          border-radius: 50%; /* 円形にする */
-        }
-      }
-
-      input[type="radio"]:checked + label:before {
-        background-color: #add8e6; /* 選択されたときの色、必要に応じて調整してください */
-      }
-    }
-  }
-
-/* styles.scss */
 
 /* 選択肢を横並びにするスタイル */
   .horizontal-choices {

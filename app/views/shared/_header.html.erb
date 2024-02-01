@@ -1,41 +1,42 @@
-<div class="bg-lightblue lg:pb-12" style="z-index: 1; position: relative;">
-  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <header class="flex items-center justify-between py-1 md:py-1">
-      <!-- logo - start -->
-      <a class="navbar-brand text-dark" href="<%= root_path %>">Caregiver_Road</a>
-      <!-- logo - end -->
-
-      <!-- nav - start -->
-      <nav class="lg:flex lg:gap-12 flex-col sm:flex-row">
-        <%= link_to t('homes.roadmap_link'), events_path, class: "nav-link text-dark block text-sm sm:text-base lg:text-lg font-semibold text-blue-600 transition duration-100 hover:text-red-500 active:text-indigo-700"%>
-          <a class="nav-link text-dark" href="<%= grants_path %>"> <%= t('homes.grants_link') %></a>
-          <a class="nav-link text-dark" href="<%= documents_path %>"> <%= t('homes.documents_link') %></a>
-          <a class="nav-link text-dark" href="<%= past_exams_path %>"> <%= t('homes.past_exams_link') %></a>
-          <a class="nav-link text-dark" href="<%= vocabulary_notes_path %>"> <%= t('homes.vocabulary_notes_link') %></a>
-      </nav>
-      <!-- nav - end -->
-
-      <nav class="nav-menu mr-20">
-        <ul class="menu-list">
-          <li class="menu-item drop-menu">
-            <% if user_signed_in? %>
-              <i class="far fa-user fa-2xl -mr-16 lg:ml-2"></i>
-              <ul class="drop-menu-list -ml-14 lg:-ml-10">
-                <li class="drop-menu-item">
-                  <a class="nav-link text-dark" href="<%= users_sign_out_path %>">ログアウト</a>
-                </li>
-              </ul>
-            <% else %>
-              <li class="drop-menu-item">
-                <a class="nav-link text-dark" href="<%= new_user_registration_path %>">新規登録</a>
-              </li>
-              <li class="drop-menu-item">
-                <a class="nav-link text-dark" href="<%= new_user_session_path %>">ログイン</a>
-              </li>
-            <% end %>
-          </li>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: lightblue;">
+  <div class="container-fluid">
+    <div class="row w-100">
+      <!-- Caregiver_Road を左詰めに配置 -->
+      <div class="col-md-6">
+        <a class="navbar-brand text-dark ms-3" href="<%= root_path %>" style="text-align: left;">Caregiver_Road</a>
+      </div>
+      <!-- ログインリンク等を右詰めに配置 -->
+      <div class="col-md-6 text-end">
+        <ul class="navbar-nav d-flex flex-row justify-content-end">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= users_sign_out_path %>">ログアウト</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= events_path %>"> <%= t('homes.roadmap_link') %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= grants_path %>"> <%= t('homes.grants_link') %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= documents_path %>"> <%= t('homes.documents_link') %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= past_exams_path %>"> <%= t('homes.past_exams_link') %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= vocabulary_notes_path %>"> <%= t('homes.vocabulary_notes_link') %></a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= new_user_registration_path %>">新規登録</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= new_user_session_path %>">ログイン</a>
+            </li>
+          <% end %>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </div>
   </div>
-</div>
+</nav>
