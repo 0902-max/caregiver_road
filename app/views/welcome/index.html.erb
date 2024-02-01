@@ -7,7 +7,7 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    margin-top: 120px;
+
     border: 2px solid #333; /* 境界線の色 */
     border-radius: 8px; /* 角丸にする */
     transition: background-color 0.3s ease; /* ホバーエフェクトのスムーズな遷移 */
@@ -46,33 +46,33 @@
             <p>答えることで自分が提出する書類を見つける事ができるよ</p>
           </div>
         </div>
-        <div class="bg-gray-light p-6 rounded-lg shadow-xl mx-3 mb-10 py-10">
+        <div class="bg-gray-light p-6 rounded-lg shadow-xl mx-3 mb-10 py-10 text-center">
           <h1 class="text-xl md:text-2xl text-center">【 イベントを作成しよう 】</h1>
-          <%= image_tag "top_page2.png", size: "600x300", class:"mx-auto my-10 rounded-lg" %>
+          <%= image_tag "top_page2.png", size: "600x300", class:"img-fluid rounded-lg" %>
           <div class="text-center text-sm md:text-lg">
             <p class="mb-5">まずは、イベント画面でイベントを設定しよう</p>
             <p>top画面から通知を受け取ることができるよ！</p>
           </div>
         </div>
-        <div class="bg-gray-light p-6 rounded-lg shadow-xl mx-3 mb-10 py-10">
+        <div class="bg-gray-light p-6 rounded-lg shadow-xl mx-3 mb-10 py-10 text-center">
           <h1 class="text-xl md:text-2xl text-center">【 補助金を調べよう 】</h1>
-          <%= image_tag "top_page3.png", size: "600x300", class:"mx-auto my-10 rounded-lg" %>
+          <%= image_tag "top_page3.png", size: "600x300", class:"img-fluid rounded-lg" %>
           <div class="text-center text-sm md:text-lg">
             <p class="mb-5">補助金ページで自分に当てはまるカテゴーを検索する</p>
             <p>検索できたら登録されている補助金が出る為、それを調べてみよう！</p>
           </div>
         </div>
-        <div class="bg-gray-light rounded-lg shadow-xl mx-3 mb-10 py-10">
+        <div class="bg-gray-light rounded-lg shadow-xl mx-3 mb-10 py-10text-center">
           <h1 class="text-xl md:text-2xl text-center">【 過去問で力を！ 】</h1>
-          <%= image_tag "top_page4.png", size: "600x300", class:"mx-auto my-10 rounded-lg" %>
+          <%= image_tag "top_page4.png", size: "600x300", class:"img-fluid rounded-lg" %>
           <div class="text-center text-sm md:text-lg">
             <p class="mb-5">過去の問題に挑戦しよう！</p>
             <p>挑戦後、間違った問題だけを再挑戦して苦手を見つけて、克服していこう</p>
           </div>
         </div>
-        <div class="bg-gray-light p-6 rounded-lg shadow-xl mx-3 mb-10 py-10">
+        <div class="bg-gray-light p-6 rounded-lg shadow-xl mx-3 mb-10 py-10 text-center">
           <h1 class="text-xl md:text-2xl text-center">【 単語帳を作成しよう 】</h1>
-          <%= image_tag "top_page5.png", size: "600x300", class:"mx-auto my-10 rounded-lg" %>
+          <%= image_tag "top_page5.png", size: "600x300", class:"img-fluid rounded-lg" %>
           <div class="text-center">
             <p class="mb-10 text-xl md:text-2xl">単語帳にテーマごとに単語を登録しよう</p>
             <p class="text-sm md:text-lg">何度も繰り返すことで記憶できるようにしていこう！</p>
@@ -80,3 +80,9 @@
         </div>
       </div>
     </section>
+    <div style="text-align: center;">
+      <%= link_to t('welcome.get_started_button'), new_user_registration_path, class: 'btn btn-success'%>
+    </div>
+    </hr>
+  </div>
+</div>
