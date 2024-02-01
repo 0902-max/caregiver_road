@@ -9,14 +9,29 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_import_module_tag 'controllers/application' %>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body>
     <%= render 'shared/header' %>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key == :notice ? 'success' : 'danger' %>">
-        <%= value %>
-      </div>
+    <% flash.each do |error_type, message| %>
+      <% if error_type == "success" %>
+        <div class="alert alert-success">
+          <span><%= message %></span>
+        </div>
+      <% elsif error_type == "error" %>
+        <div class="alert alert-error">
+          <span><%= message %></span>
+        </div>
+      <% elsif error_type == "warning" %>
+        <div class="alert alert-warning">
+          <span><%= message %></span>
+        </div>
+      <% elsif error_type == "notice" %>
+        <div class="alert alert-success">
+          <span><%= message %></span>
+        </div>
+      <% end %>
     <% end %>
     <%= yield %>
   </body>

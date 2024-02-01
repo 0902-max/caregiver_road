@@ -3,7 +3,7 @@
 en:
   devise:
     sessions:
-      signed_in: ログインに成功しました。
+      signed_in: '<div class="alert alert-success">ログインに成功しました。</div>'
       signed_out: ログアウトしました。
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
