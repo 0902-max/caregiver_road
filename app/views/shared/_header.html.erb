@@ -6,12 +6,9 @@
         <a class="navbar-brand text-dark ms-3" href="<%= root_path %>" style="text-align: left;">Caregiver_Road</a>
       </div>
       <!-- ログインリンク等を右詰めに配置 -->
-      <div class="col-md-6 text-end">
+      <div class="col-md-6 text-end" style="margin-right: 5px; >
         <ul class="navbar-nav d-flex flex-row justify-content-end">
           <% if user_signed_in? %>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="<%= users_sign_out_path %>">ログアウト</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link text-dark" href="<%= events_path %>"> <%= t('homes.roadmap_link') %></a>
             </li>
@@ -26,6 +23,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark" href="<%= vocabulary_notes_path %>"> <%= t('homes.vocabulary_notes_link') %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<%= users_sign_out_path %>">ログアウト</a>
             </li>
           <% else %>
             <li class="nav-item">
