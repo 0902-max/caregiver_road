@@ -1,21 +1,21 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to t('devise.sessions.new.login_button'), new_session_path(resource_name), class:"text-center text-sm link link-info my-4 mx-20 sm:mx-28 md:mx-36 lg:mx-24" %><br />
+  <%= link_to t('devise.sessions.new.login_button'), new_session_path(resource_name), style: "display: inline-block; text-align: center; font-size: 14px; color: #337ab7; margin-top: 4px; margin-right: 20px; margin-bottom: 4px; margin-left: 20px; smargin-right: 28px; margin-left: 28px; margin-right: 36px; margin-left: 36px; margin-right: 24px; margin-left: 24px;" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to t('devise.registrations.new.registration_button'), new_registration_path(resource_name), class:"text-center text-sm link link-info my-4 mx-20 sm:mx-28 md:mx-36 lg:mx-24" %><br />
+  <%= link_to t('devise.registrations.new.registration_button'), new_registration_path(resource_name), style: "display: inline-block; text-align: center; font-size: 14px; color: #337ab7; margin-top: 4px; margin-right: 20px; margin-bottom: 4px; margin-left: 20px; smargin-right: 28px; margin-left: 28px; margin-right: 36px; margin-left: 36px; margin-right: 24px; margin-left: 24px;" %><br />
 <% end %>
 <br>
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to t('devise.passwords.new.forgot_password_link'), new_password_path(resource_name), class:"text-center text-sm link link-info my-4 mx-20 sm:mx-28 md:mx-36 lg:mx-24" %><br />
+  <%= link_to t('devise.passwords.new.forgot_password_link'), new_password_path(resource_name), style: "display: inline-block; text-align: center; font-size: 14px; color: #337ab7; margin-top: 4px; margin-right: 20px; margin-bottom: 4px; margin-left: 20px; smargin-right: 28px; margin-left: 28px; margin-right: 36px; margin-left: 36px; margin-right: 24px; margin-left: 24px;" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to t('devise.confirmations.new.confirmation_instructions_link'), new_confirmation_path(resource_name), class:"text-center text-sm link link-info my-4 mx-20 sm:mx-28 md:mx-36 lg:mx-24" %><br />
+  <%= link_to t('devise.confirmations.new.confirmation_instructions_link'), new_confirmation_path(resource_name), style: "display: inline-block; text-align: center; font-size: 14px; color: #337ab7; margin-top: 4px; margin-right: 20px; margin-bottom: 4px; margin-left: 20px; smargin-right: 28px; margin-left: 28px; margin-right: 36px; margin-left: 36px; margin-right: 24px; margin-left: 24px;" %><br />
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to t('devise.unlocks.new.unlock_instructions_link'), new_unlock_path(resource_name), class:"text-center text-sm link link-info my-4 mx-20 sm:mx-28 md:mx-36 lg:mx-24" %><br />
+  <%= link_to t('devise.unlocks.new.unlock_instructions_link'), new_unlock_path(resource_name), style: "display: inline-block; text-align: center; font-size: 14px; color: #337ab7; margin-top: 4px; margin-right: 20px; margin-bottom: 4px; margin-left: 20px; smargin-right: 28px; margin-left: 28px; margin-right: 36px; margin-left: 36px; margin-right: 24px; margin-left: 24px;" %><br />
 <% end %>
 
 <%- if devise_mapping.omniauthable? %>

@@ -22,7 +22,7 @@
       max-width: 370px;
     }
 
-    h1, .custom-h2 {
+    h1, h2 {
       text-align: center;
       padding: 1em 0;
     }
@@ -97,18 +97,18 @@
 <body>
 
 <div class="form-wrapper">
-  <h2 class="custom-h2"><%= t('devise.sessions.new.title') %></h2>
+  <h2><%= t('devise.sessions.new.title') %></h2>
   <br>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <br>
-    <div class="field">
+    <div class="form-item">
       <%= f.label :email, t('devise.sessions.new.email_label') %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
     <br>
 
-    <div class="field">
+    <div class="form-item">
       <%= f.label :password, t('devise.sessions.new.password_label') %><br />
       <%= f.password_field :password, autocomplete: "current-password" %>
     </div>
@@ -121,7 +121,7 @@
     <% end %>
     <br>
 
-    <div class="actions">
+    <div class="button-panel">
       <%= f.submit t('devise.sessions.new.submit_button'), class: "button" %>
     </div>
   <% end %>
