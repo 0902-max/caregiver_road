@@ -41,6 +41,8 @@ ja:
     unlocks:
       new:
         unlock_instructions_link: "アカウントのロック解除メールが届かない場合"
+    failure:
+      unauthenticated: 'ログインしてください'
   layouts:
     application:
       title: '介護福祉士への道'
@@ -61,7 +63,7 @@ ja:
     answer_questions_message: '質問に答えてね！'
     get_started_button: '始めよう'
   documents:
-    index_title: '書類一覧'
+    index_title: '必要書類一覧'
     no_documents_message: 'まだ書類はありません。'
     calculation_link: '介護福祉士の従事期間計算'
   events:
