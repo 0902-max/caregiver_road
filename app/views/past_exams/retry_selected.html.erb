@@ -19,20 +19,46 @@
     }
   }
   </style>
-<div class="retry-container">
-  <h1><%= t('past_exams.retry_title') %></h1>
-  <h2 id="exam-text"><%= @past_exam.exam_text %></h2>
+  <div class="text-center container mx-auto px-1 sm:px-6 mt-8">
+  <div class="rounded-lg shadow-md relative p-2 sm:p-10" style="max-width: 36rem; margin: auto;">
+    <div class="rounded-lg shadow-md p-4 sm:p-6 mx-auto" style="background-color: rgba(255, 255, 255, 0.2);">
+      <h2><%= t('past_exams.retry_title') %></h1>
+      <p id="exam-text"><%= @past_exam.exam_text %></p>
 
 
   <%= form_with(model: @user_past_exam, url: retry_selected_past_exam_path(@past_exam), method: 'post') do |form| %>
-    <ul class="custom-list">
-      <li><%= form.radio_button :selected_option, 'a' %> <%= @past_exam.option_a %></li>
-      <li><%= form.radio_button :selected_option, 'b' %> <%= @past_exam.option_b %></li>
-      <li><%= form.radio_button :selected_option, 'c' %> <%= @past_exam.option_c %></li>
-      <li><%= form.radio_button :selected_option, 'd' %> <%= @past_exam.option_d %></li>
-      <li><%= form.radio_button :selected_option, 'e' %> <%= @past_exam.option_e %></li>
-    </ul>
-
+    <ul class="list-unstyled">
+    <li style="padding-left: 10px; padding-right: 10px; list-style-type: none">
+      <%= form.label :selected_option_a, class: 'btn btn-primary w-100' do %>
+        <%= form.radio_button :selected_option, 'a', class: 'hidden' %>
+        <%= @past_exam.option_a %>
+      <% end %>
+    </li>
+    <li style="padding-left: 10px; padding-right: 10px;">
+      <%= form.label :selected_option_b, class: 'btn btn-primary w-100' do %>
+        <%= form.radio_button :selected_option, 'b', class: 'hidden' %>
+        <%= @past_exam.option_b %>
+      <% end %>
+    </li>
+    <li style="padding-left: 10px; padding-right: 10px;">
+      <%= form.label :selected_option_c, class: 'btn btn-primary w-100' do %>
+        <%= form.radio_button :selected_option, 'c', class: 'hidden' %>
+        <%= @past_exam.option_c %>
+      <% end %>
+    </li>
+    <li style="padding-left: 10px; padding-right: 10px;">
+      <%= form.label :selected_option_d, class: 'btn btn-primary w-100' do %>
+        <%= form.radio_button :selected_option, 'd', class: 'hidden' %>
+        <%= @past_exam.option_d %>
+      <% end %>
+    </li>
+    <li style="padding-left: 10px; padding-right: 10px;">
+      <%= form.label :selected_option_e, class: 'btn btn-primary w-100' do %>
+        <%= form.radio_button :selected_option, 'e', class: 'hidden' %>
+        <%= @past_exam.option_e %>
+      <% end %>
+    </li>
+  </ul>
     <%= form.submit t('past_exams.answer_button'), class: "btn" %>
   <% end %>
 </div>
