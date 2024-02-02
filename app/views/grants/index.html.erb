@@ -2,14 +2,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>補助金検索ページ</title>
   <style>
-  .btn:hover {
-    background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
-  }
-  &:hover {
+  /* 共通のボタンスタイル */
+  .btn {
+    background-color: #FFCF81; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+
+    &:hover {
       background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
     }
+  }
 </style>
-
 </head>
 <div class="text-center" style="margin-top: 15px;">
   <br>
@@ -20,7 +22,7 @@
   <form id="searchForm" action="<%= grants_path %>" method="get">
     <label for="keyword"><%= t('grants.search_form_label') %>:</label>
     <input type="text" id="keyword" name="keyword">
-    <button type="submit" class="btn" style="background-color: #FFCF81; color: #000;"><%= t('grants.search_button') %></button>
+    <button type="submit" class="btn"s><%= t('grants.search_button') %></button>
   </form>
 
   <% if @grants %>

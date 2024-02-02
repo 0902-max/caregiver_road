@@ -1,3 +1,16 @@
+<style>
+  /* 共通のボタンスタイル */
+  .btn {
+    background-color: #FFCF81; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+    font-size: 22px;
+    padding: 10px;
+
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+</style>
 <div class="text-center" style="margin-top: 15px;">
 <br>
 <br>
@@ -16,7 +29,6 @@
 <br>
 <br>
 <% if defined? @choice && @choice.to_i == 5 %>
-  <%= link_to t('documents.calculation_link'), "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn", style: "background-color: #FFCF81;
-  color: #000; font-size: 22px; padding: 10px;", onclick: "return confirm('外部サイトに移動します。よろしいですか？');" %>
+  <%= link_to t('documents.calculation_link'), "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn", onclick: "return confirm('外部サイトに移動します。よろしいですか？');" %>
 <% end %>
 </div>
