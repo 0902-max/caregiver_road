@@ -1,5 +1,5 @@
 <!-- views/past_exams/explanation.html.erb -->
-<style>
+  <style>
   /* 共通のボタンスタイル */
   .btn {
     display: inline-block;
@@ -19,16 +19,20 @@
     }
   }
   </style>
-<br>
-<br>
-<% if @is_correct %>
-  <h1>正解だよ！</h1>
-<% else %>
-  <h1>残念。不正解だよ</h1>
-<% end %>
-<br>
-<br>
-<h2 id="exam-text"><%= @explanation %></h2>
-<br>
-<br>
-<%= link_to '次へ', next_question_past_exam_path(@past_exam), class: 'btn' %>
+  <div class="text-center container mx-auto px-1 sm:px-6 mt-8">
+    <div class="rounded-lg shadow-md relative p-2 sm:p-10" style="max-width: 45rem; margin: auto;">
+      <div class="rounded-lg shadow-md p-4 sm:p-6 mx-auto" style="background-color: rgba(255, 255, 255, 0.8);">
+        <% if @is_correct %>
+          <h1>正解だよ！</h1>
+        <% else %>
+          <h1>残念。不正解だよ</h1>
+        <% end %>
+        <br>
+        <br>
+        <h2 id="exam-text"><%= @explanation %></h2>
+        <br>
+        <br>
+        <%= link_to '次へ', next_question_past_exam_path(@past_exam), class: 'btn' %>
+      </div>
+    </div>
+  </div>
