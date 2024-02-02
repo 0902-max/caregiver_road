@@ -1,3 +1,23 @@
+<style>
+  /* 共通のボタンスタイル */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    border: 2px solid;
+    border-radius: 8px; /* 角丸にする */
+    background-color: #FDFFAB; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+  </style>
 <div class="exam-container">
   <h1 id="exam-text"><%= @past_exam.exam_text %></h1>
   <h1>Question <%= @question_count %>/20</h1>
@@ -37,6 +57,6 @@
       </li>
     </ul>
     <!-- 回答ボタン -->
-    <%= form.submit t('past_exams.answer_button'), onclick: 'submitAnswer()', class: "btn btn-success" %>
+    <%= form.submit t('past_exams.answer_button'), onclick: 'submitAnswer()', class: "btn" %>
   <% end %>
 </div>

@@ -1,4 +1,24 @@
 <!-- views/past_exams/explanation.html.erb -->
+<style>
+  /* 共通のボタンスタイル */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    border: 2px solid;
+    border-radius: 8px; /* 角丸にする */
+    background-color: #FDFFAB; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+  </style>
 <br>
 <br>
 <% if @is_correct %>
@@ -11,4 +31,4 @@
 <h2 id="exam-text"><%= @explanation %></h2>
 <br>
 <br>
-<%= link_to '次へ', next_question_past_exam_path(@past_exam), class: 'btn btn-primary' %>
+<%= link_to '次へ', next_question_past_exam_path(@past_exam), class: 'btn' %>
