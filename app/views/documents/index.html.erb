@@ -1,3 +1,4 @@
+<div class="text-center" style="margin-top: 15px;">
 <br>
 <br>
 <h1><%= t('documents.index_title') %></h1>
@@ -15,5 +16,7 @@
 <br>
 <br>
 <% if defined? @choice && @choice.to_i == 5 %>
-  <%= link_to t('documents.calculation_link'), "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn btn-success", style: "font-size: 22px; padding: 10px;", onclick: "return confirm('外部サイトに移動します。よろしいですか？');" %>
+  <%= link_to t('documents.calculation_link'), "https://www.sssc.or.jp/kaigo/shikaku/k_08_1.html", target: "_blank", class: "btn", style: "background-color: #FFCF81;
+  color: #000; font-size: 22px; padding: 10px;", onclick: "return confirm('外部サイトに移動します。よろしいですか？');" %>
 <% end %>
+</div>

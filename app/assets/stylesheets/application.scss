@@ -1,5 +1,16 @@
 @import "bootstrap";
   /* application.scss */
+  body {
+    background-color: #D9EDBF;
+  }
+
+  .btn {
+    background-color: #FFCF81; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
 
   .pagination-container {
     display: flex;
@@ -202,9 +213,4 @@
     font-size: 1.2em;
     color: #666; /* カジュアルな色に調整 */
     margin-top: 30px; /* 適切なマージンを追加 */
-  }
-  .alert-notice {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
   }

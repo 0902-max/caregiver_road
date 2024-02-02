@@ -1,19 +1,40 @@
 <!-- app/views/events/_form.html.erb -->
+<style>
+  /* 共通のボタンスタイル */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 
-<h2><%= t('events.form.title') %></h2>
+    border: 2px solid;
+    border-radius: 8px; /* 角丸にする */
+    background-color: #FFCF81; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
 
-<%= form_with(model: @event, url: events_path, local: true) do |form| %>
-  <div>
-    <%= form.label :title, t('events.form.title_label') %>
-    <%= form.text_field :title %>
-  </div>
-  <br>
-  <div>
-    <%= form.label :start_datetime, t('events.form.start_datetime_label') %>
-    <%= form.datetime_local_field :start_datetime %>
-  </div>
-  <br>
-  <div>
-    <%= form.submit t('events.form.submit_button'), class: "btn btn-success" %>
-  </div>
-<% end %>
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+</style>
+<div class="text-center">
+  <h2><%= t('events.form.title') %></h2>
+
+  <%= form_with(model: @event, url: events_path, local: true) do |form| %>
+    <div>
+      <%= form.label :title, t('events.form.title_label') %>
+      <%= form.text_field :title %>
+    </div>
+    <br>
+    <div>
+      <%= form.label :start_datetime, t('events.form.start_datetime_label') %>
+      <%= form.datetime_local_field :start_datetime %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit t('events.form.submit_button'), class: "btn btn-suc" %>
+    </div>
+  <% end %>
+</div>
