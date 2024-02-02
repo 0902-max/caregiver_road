@@ -1,3 +1,23 @@
+<style>
+  /* 共通のボタンスタイル */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    border: 2px solid;
+    border-radius: 8px; /* 角丸にする */
+    background-color: #FDFFAB; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+  </style>
 <div class="text-center">
 <h1><%= t('vocabulary_notes.index_title') %></h1>
 <br>
@@ -8,11 +28,11 @@
 <br>
 <br>
 <% @vocabulary_notes.each do |note| %>
-  <%= link_to note.title, vocabulary_note_path(note), class: "btn btn-success" %>
+  <%= link_to note.title, vocabulary_note_path(note), class: "btn" %>
   <br>
 <% end %>
 <br>
 <br>
 <br>
-<%= link_to t('vocabulary_notes.create_note_button'), new_vocabulary_note_path, class: "btn btn-primary" %>
+<%= link_to t('vocabulary_notes.create_note_button'), new_vocabulary_note_path, class: "btn" %>
 </div>

@@ -1,3 +1,24 @@
+<style>
+  /* 共通のボタンスタイル */
+  .btn1 {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    border: 2px solid;
+    border-radius: 8px; /* 角丸にする */
+    background-color: #FDFFAB; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+</style>
+<div class = "text-center">
 <br>
 <h1><%= @vocabulary_note.title %></h1>
 <br>
@@ -22,10 +43,14 @@
 </div>
 <br>
 <br>
-<%= link_to t('vocabulary_notes.back_button'), vocabulary_notes_path, class: "btn btn-success" %>
+<div class="btn-group" role="group" aria-label="ボタングループ">
+<%= link_to vocabulary_notes_path, class: "btn btn-primary", style: "margin-right: 15px;" do %>
+  <%= t('vocabulary_notes.back_button') %>
+<% end %>
 
-<%= link_to t('vocabulary_notes.create_word_button'), new_vocabulary_note_vocabulary_entry_path(@vocabulary_note), class: "btn btn-primary" %>
-
+<%= link_to t('vocabulary_notes.create_word_button'), new_vocabulary_note_vocabulary_entry_path(@vocabulary_note), class: "btn1" %>
+</div>
+</div>
 <script>
   function toggleMeaning(button) {
     var cardBody = button.parentNode;

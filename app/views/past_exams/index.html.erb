@@ -1,3 +1,23 @@
+<style>
+  /* 共通のボタンスタイル */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    border: 2px solid;
+    border-radius: 8px; /* 角丸にする */
+    background-color: #FDFFAB; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+  </style>
 <div class=past_index>
   <h1><%= t('past_exams.index_title') %></h1>
   
@@ -11,7 +31,7 @@
     <p><%= t('past_exams.last_result') %>  <%= @user_past_score %></p>
   <% end %>
   <!-- 再挑戦リンク -->
-  <%= link_to '不正解一覧', retry_incorrect_answers_past_exam_path(@past_exams), class: 'btn btn-primary' %>
+  <%= link_to '不正解一覧', retry_incorrect_answers_past_exam_path(@past_exams), class: 'btn' %>
 
   <%= link_to 'スタート', past_exam_path(@past_exam), class: 'btn_09', id: 'start-button' %>
 </div>

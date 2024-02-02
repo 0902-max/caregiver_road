@@ -1,4 +1,25 @@
 <!-- app/views/home/description.html.erb -->
+<style>
+  /* 共通のボタンスタイル */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 25px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    border: 2px solid;
+    border-radius: 8px; /* 角丸にする */
+    background-color: #FDFFAB; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+
+    &:hover {
+      background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
+</style>
+<div class="text-center" style="margin-top: 15px;">
 <br>
 <br>
 <h1><%= t('homes.description_title') %></h1>
@@ -9,4 +30,5 @@
 <p><%= t('homes.answer_questions_message') %></p>
 <br>
 
-<%= link_to t('homes.get_started_button'), questions_path, class: 'btn btn-success', style: 'font-size: 25px;' %>
+<%= link_to t('homes.get_started_button'), questions_path, class: 'btn' %>
+</div>
