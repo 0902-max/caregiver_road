@@ -19,21 +19,23 @@
   }
   </style>
 <div class="text-center">
-<h1><%= t('vocabulary_notes.index_title') %></h1>
-<br>
-<br>
-<br>
-<p><%= t('vocabulary_notes.introduction_1') %></p>
-<p><%= t('vocabulary_notes.introduction_2') %></p>
-<p><%= t('vocabulary_notes.introduction_3') %></p>
-<br>
-<br>
-<% @vocabulary_notes.each do |note| %>
-  <%= link_to note.title, vocabulary_note_path(note), class: "btn" %>
   <br>
-<% end %>
-<br>
-<br>
-<br>
-<%= link_to t('vocabulary_notes.create_note_button'), new_vocabulary_note_path, class: "btn" %>
+  <br>
+  <h1><%= t('vocabulary_notes.index_title') %></h1>
+  <br>
+  <br>
+  <br>
+  <p><%= t('vocabulary_notes.introduction_1') %></p>
+  <p><%= t('vocabulary_notes.introduction_2') %></p>
+  <p><%= t('vocabulary_notes.introduction_3') %></p>
+  <br>
+  <br>
+  <% @vocabulary_notes.each do |note| %>
+    <%= link_to note.title, vocabulary_note_path(note), class: "btn" %>
+    <br>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <%= link_to t('vocabulary_notes.create_note_button'), new_vocabulary_note_path, class: "btn" %>
 </div>

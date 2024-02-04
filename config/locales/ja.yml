@@ -135,3 +135,5 @@ ja:
   flash_messages:
     vocabulary_note_created_successfully: '単語帳が正常に作成されました。'
     vocabulary_entry_created_successfully: '単語が正常に作成されました。'
+  flash:
+    vocabulary_created_successfully: "用語が正常に作成されました。"
