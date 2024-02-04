@@ -27,7 +27,7 @@
 <br>
 <% if defined?(@next_question) %>
   <!-- 選択肢が選ばれた後に表示するコンテンツ -->
-  <div id="next-question-container">
+  <div id="next-question-container", class = "text-center">
     <p class="custom-p"><strong><%= t('questions.next_question_text') %></strong> <%= @next_question.body %></p>
     <br>
     <ul id="choices-container" class="horizontal-choices">
