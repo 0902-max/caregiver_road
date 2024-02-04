@@ -19,29 +19,32 @@
   }
 </style>
 <div class = "text-center">
-<br>
-<br>
-<h1><%= t('vocabulary_notes.new_title') %></h1>
-<div class="text-center">
-<%= form_with(model: @vocabulary_note, url: vocabulary_notes_path) do |form| %>
-  <%= form.label t('vocabulary_notes.title_label') %>
-  <%= form.text_field :title %>
   <br>
   <br>
+  <h1><%= t('vocabulary_notes.new_title') %></h1>
   <br>
-
-  <%= form.label :description, t('vocabulary_notes.description_label') %>
-  <%= form.text_area :description %>
-  <br>
-<br>
-<br>
-
-  <%= form.submit t('vocabulary_notes.create_button'), class: "btn1" %>
-<% end %>
-<br>
-<br>
-<br>
-
-<%= link_to t('vocabulary_notes.back_button'), vocabulary_notes_path, class: "btn btn-primary" %>
-</div>
+  <p><%= t('vocabulary_notes.new_create_1') %></p>
+  <p><%= t('vocabulary_notes.new_create_2') %></p>
+  <p><%= t('vocabulary_notes.new_create_3') %></p>
+  <p><%= t('vocabulary_notes.new_create_4') %></p>
+  <div class="text-center">
+    <br>
+    <br>
+    <%= form_with(model: @vocabulary_note, url: vocabulary_notes_path) do |form| %>
+      <%= form.label t('vocabulary_notes.title_label') %>
+      <%= form.text_field :title %>
+      <br>
+      <br>
+      <br>
+      <%= form.label :description, t('vocabulary_notes.description_label') %>
+      <%= form.text_area :description %>
+      <br>
+      <br>
+      <br>
+      <div class="btn-group" role="group" aria-label="ボタングループ">
+        <%= form.submit t('vocabulary_notes.create_button'), class: "btn1", style: "margin-right: 15px;" %>
+        <%= link_to t('vocabulary_notes.back_button'), vocabulary_notes_path, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
