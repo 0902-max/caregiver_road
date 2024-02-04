@@ -44,11 +44,10 @@
 <br>
 <br>
 <div class="btn-group" role="group" aria-label="ボタングループ">
-<%= link_to vocabulary_notes_path, class: "btn btn-primary", style: "margin-right: 15px;" do %>
+<%= link_to t('vocabulary_notes.create_word_button'), new_vocabulary_note_vocabulary_entry_path(@vocabulary_note), class: "btn1" %>
+<%= link_to vocabulary_notes_path, class: "btn btn-primary", style: "margin-left: 15px;" do %>
   <%= t('vocabulary_notes.back_button') %>
 <% end %>
-
-<%= link_to t('vocabulary_notes.create_word_button'), new_vocabulary_note_vocabulary_entry_path(@vocabulary_note), class: "btn1" %>
 </div>
 </div>
 <script>

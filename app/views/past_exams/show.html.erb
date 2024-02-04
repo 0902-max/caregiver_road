@@ -17,6 +17,23 @@
       background-color: #FFEB81; /* ホバー時の背景色、必要に応じて調整 */
     }
   }
+  .btn1 {
+    display: inline-block;
+    padding: 10px 20px; /* 上下左右の余白を調整 */
+    font-size: 16px; /* フォントサイズを調整 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    border: 2px solid;
+    border-radius: 8px; /* 角丸にする */
+    background-color: #f16272; /* 成功の色、必要に応じて調整 */
+    color: #000; /* テキストの色 */
+
+    &:hover {
+      background-color: #f56272; /* ホバー時の背景色、必要に応じて調整 */
+    }
+  }
   </style>
 <div class="text-center container mx-auto px-1 sm:px-6 mt-8">
   <div class="rounded-lg shadow-md relative p-2 sm:p-10" style="max-width: 45rem; margin: auto;">
@@ -28,38 +45,38 @@
       <%= form_with(model: @past_exam, url: answer_past_exam_path(@past_exam), method: 'post') do |form| %>
         <ul class="list-unstyled">
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_a, class: 'btn btn-primary w-100' do %>
+            <%= form.label :selected_option_a, class: 'btn w-100' do %>
               <%= form.radio_button :selected_option, 'a', class: 'hidden' %>
               <%= @past_exam.option_a %>
             <% end %>
           </li>
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_b, class: 'btn btn-primary w-100' do %>
+            <%= form.label :selected_option_b, class: 'btn w-100' do %>
               <%= form.radio_button :selected_option, 'b', class: 'hidden' %>
               <%= @past_exam.option_b %>
             <% end %>
           </li>
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_c, class: 'btn btn-primary w-100' do %>
+            <%= form.label :selected_option_c, class: 'btn w-100' do %>
               <%= form.radio_button :selected_option, 'c', class: 'hidden' %>
               <%= @past_exam.option_c %>
             <% end %>
           </li>
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_d, class: 'btn btn-primary w-100' do %>
+            <%= form.label :selected_option_d, class: 'btn btn w-100' do %>
               <%= form.radio_button :selected_option, 'd', class: 'hidden' %>
               <%= @past_exam.option_d %>
             <% end %>
           </li>
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_e, class: 'btn btn-primary w-100' do %>
+            <%= form.label :selected_option_e, class: 'btn w-100' do %>
               <%= form.radio_button :selected_option, 'e', class: 'hidden' %>
               <%= @past_exam.option_e %>
             <% end %>
           </li>
         </ul>
         <!-- 回答ボタン -->
-        <%= form.submit t('past_exams.answer_button'), onclick: 'submitAnswer()', class: "btn" %>
+        <%= form.submit t('past_exams.answer_button'), onclick: 'submitAnswer()', class: "btn1" %>
       <% end %>
     </div>
   </div>
