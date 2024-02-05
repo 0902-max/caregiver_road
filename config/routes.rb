@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   root 'welcome#index'
-  get "/term", to: "static_pages#term"
-  get "/privacy", to: "static_pages#privacy"
+  get "/term_path", to: "static_pages#term"
+  get '/privacy_path', to: 'static_pages#privacy'
   get 'description', to: 'homes#description', as: 'description'
   resources :questions, only: [:index, :new, :create]
   post '/questions/get_next_question', to: 'questions#get_next_question'
