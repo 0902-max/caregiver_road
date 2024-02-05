@@ -3,6 +3,11 @@ ja:
   welcome:
     index_title: '介護福祉士への道'
     get_started_button: '始めよう！'
+  static_pages:
+    term:
+      title: '利用規約'
+    privacy:
+      title: 'プライバシーポリシー'
   devise:
     sessions:
       user:
