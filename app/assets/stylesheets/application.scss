@@ -68,25 +68,6 @@
   #event-form {
     margin-bottom: 20px; /* フォームの下マージンを指定 */
   }
-
-  .past_index {
-    height: 100vh; /* 画面全体の高さを100%に設定 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    h1 {
-      margin-top: auto;
-      margin-bottom: 50px; /* 任意の余白を追加 */
-    }
-
-    p {
-      margin-top: 20px;
-      margin-bottom: 50px; /* 任意の余白を追加 */
-    }
-  }
   #exam-text {
     padding: 10px;
     font-size: 24px;
