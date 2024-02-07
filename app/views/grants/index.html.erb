@@ -20,9 +20,10 @@
   <p><%= t('grants.search_page_description') %></p>
   <br>
   <form id="searchForm" action="<%= grants_path %>" method="get">
-    <label for="keyword"><%= t('grants.search_form_label') %>:</label>
-    <input type="text" id="keyword" name="keyword">
-    <button type="submit" class="btn"><%= t('grants.search_button') %></button>
+    <div class="col-md-6 offset-md-3">
+      <input type="text" id="keyword" name="keyword">
+      <button type="submit" class="btn"><%= t('grants.search_button') %></button>
+    </div>
   </form>
   <br>
 
