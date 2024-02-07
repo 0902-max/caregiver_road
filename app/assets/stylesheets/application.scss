@@ -86,23 +86,6 @@
       margin-top: 20px;
       margin-bottom: 50px; /* 任意の余白を追加 */
     }
-    .btn_09 {
-	    text-align: center;
-	    text-decoration: none;
-	    width: 120px;
-	    margin: auto;
-	    font-weight: bold;
-	    background: linear-gradient(to top, rgb(5, 130, 174), #27acd9);
-	    color: #fff;
-	    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-	    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-	    transition: 0.5s;
-      font-size: 1.7em; /* 任意のフォントサイズを指定 */
-    }
-    .btn_09:hover {
-      color: #fff;
-      opacity: 0.5;
-    }
   }
   #exam-text {
     padding: 10px;
