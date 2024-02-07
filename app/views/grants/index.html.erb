@@ -18,10 +18,9 @@
   <h1><%= t('grants.search_page_title') %></h1>
   <br>
   <p><%= t('grants.search_page_description') %></p>
-  <br>
   <form id="searchForm" action="<%= grants_path %>" method="get">
     <div class="col-md-6 offset-md-3">
-      <input type="text" id="keyword" name="keyword">
+      <input type="text" id="keyword" name="keyword" class="form-control">
       <button type="submit" class="btn"><%= t('grants.search_button') %></button>
     </div>
   </form>
