@@ -18,7 +18,7 @@
     }
   }
 </style>
-<div class="text-center container mx-auto px-1 sm:px-6 mt-8">
+<div class="text-center container mx-auto px-1 sm:px-6 mt-8" style="padding-top: 40px;">
   <div class="rounded-lg shadow-md relative p-2 sm:p-10" style="max-width: 45rem; margin: auto;">
     <div class="rounded-lg shadow-md p-4 sm:p-6 mx-auto" style="background-color: rgba(255, 255, 255, 0.8);">
       <br>
@@ -34,15 +34,19 @@
       <!-- 過去のスコア表示 -->
       <h2 class="custom-h2"><%= t('past_exams.history_title') %></h2>
       <br>
+      <br>
       <% if user_signed_in? %>
         <p><%= t('past_exams.last_result') %>  <%= @user_past_score %></p>
       <% end %>
+      <br>
       <br>
       <!-- 再挑戦リンク -->
       <%= link_to '不正解一覧', retry_incorrect_answers_past_exam_path(@past_exams), class: 'link-warning', style: 'font-size: 16px;' %>
       <br>
       <br>
       <%= link_to 'スタート', past_exam_path(@past_exam), class: 'btn', id: 'start-button' %>
+      <br>
+      <br>
     </div>
   </div>
 </div>

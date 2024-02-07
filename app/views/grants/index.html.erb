@@ -15,7 +15,6 @@
 </head>
 <div class="text-center" style="margin-top: 15px;">
   <br>
-  <br>
   <h1><%= t('grants.search_page_title') %></h1>
   <br>
   <p><%= t('grants.search_page_description') %></p>
@@ -25,13 +24,16 @@
     <input type="text" id="keyword" name="keyword">
     <button type="submit" class="btn"s><%= t('grants.search_button') %></button>
   </form>
+  <br>
 
   <% if @grants %>
   <div id="searchResults">
     <h2><%= t('grants.search_results_title') %>:</h2>
-    <% @grants.each do |grant| %>
-      <p><%= grant['title'] %></p>
-    <% end %>
+    <ul class="list-group">
+      <% @grants.each do |grant| %>
+        <li class="list-group-item"><%= grant['title'] %></li>
+      <% end %>
+    </ul>
     <div class="pagination-container">
       <%= paginate @grants if @count > 8 %>
     </div>
@@ -39,7 +41,6 @@
 <% else %>
   <p>検索バーに地名や単語を入れると検索できるよ</p>
   <p>試しに自分の都道府県を調べてみよう</p>
-
 <% end %>
 </div>
 
