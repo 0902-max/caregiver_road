@@ -17,23 +17,34 @@
       background-color: #FFA080; /* ホバー時の背景色、必要に応じて調整 */
     }
   }
-  </style>
-<div class=past_index>
-  <h1><%= t('past_exams.index_title') %></h1>
-  
+</style>
+<div class="text-center container mx-auto px-1 sm:px-6 mt-8">
+  <div class="rounded-lg shadow-md relative p-2 sm:p-10" style="max-width: 45rem; margin: auto;">
+    <div class="rounded-lg shadow-md p-4 sm:p-6 mx-auto" style="background-color: rgba(255, 255, 255, 0.8);">
+      <br>
+      <br>
+      <h1><%= t('past_exams.index_title') %></h1>
+      <br>
+      <br>
 
-  <!-- 説明文 -->
-  <p><%= t('past_exams.description') %></p>
-
-  <!-- 過去のスコア表示 -->
-  <h2 class="custom-h2"><%= t('past_exams.history_title') %></h2>
-  <% if user_signed_in? %>
-    <p><%= t('past_exams.last_result') %>  <%= @user_past_score %></p>
-  <% end %>
-  <!-- 再挑戦リンク -->
-  <%= link_to '不正解一覧', retry_incorrect_answers_past_exam_path(@past_exams), class: 'btn' %>
-
-  <%= link_to 'スタート', past_exam_path(@past_exam), class: 'btn_09', id: 'start-button' %>
+      <!-- 説明文 -->
+      <p><%= t('past_exams.description') %></p>
+      <br>
+      <br>
+      <!-- 過去のスコア表示 -->
+      <h2 class="custom-h2"><%= t('past_exams.history_title') %></h2>
+      <br>
+      <% if user_signed_in? %>
+        <p><%= t('past_exams.last_result') %>  <%= @user_past_score %></p>
+      <% end %>
+      <br>
+      <!-- 再挑戦リンク -->
+      <%= link_to '不正解一覧', retry_incorrect_answers_past_exam_path(@past_exams), class: 'link-warning', style: 'font-size: 16px;' %>
+      <br>
+      <br>
+      <%= link_to 'スタート', past_exam_path(@past_exam), class: 'btn', id: 'start-button' %>
+    </div>
+  </div>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
