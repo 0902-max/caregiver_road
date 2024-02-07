@@ -33,16 +33,18 @@
     <br>
     <br>
     <%= form_with(model: @vocabulary_note, url: vocabulary_notes_path) do |form| %>
-      <%= form.label t('vocabulary_notes.title_label') %>
-      <%= form.text_field :title %>
-      <br>
-      <br>
-      <br>
-      <%= form.label :description, t('vocabulary_notes.description_label') %>
-      <%= form.text_area :description %>
-      <br>
-      <br>
-      <br>
+      <div class="form_group pt-4 pb-3">
+        <%= form.label t('vocabulary_notes.title_label') %>
+        <%= form.text_field :title, class: "form-control" %>
+        <br>
+        <br>
+      </div>
+      <div class="form-group" >
+        <%= form.label :description, t('vocabulary_notes.description_label') %>
+        <%= form.text_area :description, class: "form-control" %>
+        <br>
+        <br>
+      </div>
       <div class="btn-group" role="group" aria-label="ボタングループ">
         <%= form.submit t('vocabulary_notes.create_button'), class: "btn1", style: "margin-right: 15px;" %>
         <%= link_to t('vocabulary_notes.back_button'), vocabulary_notes_path, class: "btn btn-primary" %>
