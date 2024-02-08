@@ -30,19 +30,14 @@
       });
     </script>
 </head>
-<div class="container-fluid mt-4">
+<div class="container-fluid mt-4" style="padding-left: 40px; padding-right: 40px;">
     <div class="row">
-        <!-- Left Column: Event Form and Calendar -->
-        <div class="col-md-6">
+        <!-- Left Column: Event Form and Event List -->
+        <div class="col-md-3">
             <div id="event-form">
                 <%= render 'form' %>
             </div>
-            <div id="calendar" class="mx-auto" style="width: 80%; height: 600px;"></div>
-        </div>
-
-        <!-- Right Column: Event List -->
-        <div class="col-md-4 offset-md-1">
-            <div id="event-list" class="card">
+            <div id="event-list" class="card mt-3">
                 <div class="card-body">
                     <h5 class="card-title"><%= t('events.list_title') %></h5>
                     <ul class="list-group">
@@ -56,6 +51,11 @@
                     </ul>
                 </div>
             </div>
+        </div>
+
+        <!-- Right Column: Full Calendar -->
+        <div class="col-md-9">
+          <div id="calendar" class="mx-auto" style="width: 90%; height: 90%; background-color: rgba(255, 255, 255, 0.8);"></div>
         </div>
     </div>
 </div>

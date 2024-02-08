@@ -4,7 +4,7 @@ class EventsController < ApplicationController
     before_action :authenticate_user!
     
     def index
-      @events = current_user.events.where('start_datetime > ?', Time.now).order(:start_datetime).limit(8)
+      @events = current_user.events.where('start_datetime > ?', Time.now).order(:start_datetime).limit(3)
       @event = Event.new
     end
   

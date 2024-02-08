@@ -20,14 +20,11 @@
   }
 </style>
 <div class="text-center">
-  <h2><%= t('events.form.title') %></h2>
-
   <%= form_with(model: @event, url: events_path, local: true) do |form| %>
     <div class="col-md-6 offset-md-3">
       <%= form.label :title, t('events.form.title_label') %>
       <%= form.text_field :title , class: "form-control"%>
     </div>
-    <br>
     <div class="col-md-6 offset-md-3">
       <%= form.label :start_datetime, t('events.form.start_datetime_label') %>
       <%= form.datetime_local_field :start_datetime, class: "form-control" %>
