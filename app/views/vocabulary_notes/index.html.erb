@@ -33,17 +33,21 @@
   <p><%= t('vocabulary_notes.introduction_3') %></p>
   <br>
   <br>
-  <div class="card-deck">
-    <% @vocabulary_notes.each do |note| %>
-      <a href="<%= vocabulary_note_path(note) %>" class="card-link">
-        <div class="card custom-card">
-          <div class="card-body">
-            <h5 class="card-title"><%= note.title %></h5>
-            <p class="card-text"><%= note.description %></p>
-          </div>
-        </div>
-      </a>
-    <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="card-deck">
+        <% @vocabulary_notes.each do |note| %>
+          <a href="<%= vocabulary_note_path(note) %>" class="card-link">
+            <div class="card custom-card">
+              <div class="card-body">
+                <h5 class="card-title"><%= note.title %></h5>
+                <p class="card-text"><%= note.description %></p>
+              </div>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
   </div>
   <br>
   <br>
