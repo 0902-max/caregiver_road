@@ -17,6 +17,9 @@
       background-color: #FFA080; /* ホバー時の背景色、必要に応じて調整 */
     }
   }
+  .custom-card {
+    background-color: #F6FDC3;
+  }
   </style>
 <div class="text-center">
   <br>
@@ -30,10 +33,18 @@
   <p><%= t('vocabulary_notes.introduction_3') %></p>
   <br>
   <br>
-  <% @vocabulary_notes.each do |note| %>
-    <%= link_to note.title, vocabulary_note_path(note), class: "btn" %>
-    <br>
-  <% end %>
+  <div class="card-deck">
+    <% @vocabulary_notes.each do |note| %>
+      <a href="<%= vocabulary_note_path(note) %>" class="card-link">
+        <div class="card custom-card">
+          <div class="card-body">
+            <h5 class="card-title"><%= note.title %></h5>
+            <p class="card-text"><%= note.description %></p>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
   <br>
   <br>
   <br>
