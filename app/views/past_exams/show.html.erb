@@ -44,39 +44,37 @@
       <!-- 選択肢表示 -->
       <%= form_with(model: @past_exam, url: answer_past_exam_path(@past_exam), method: 'post') do |form| %>
         <ul class="list-unstyled">
+          <!-- 選択肢A -->
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_a, class: 'btn w-100' do %>
-              <%= form.radio_button :selected_option, 'a', class: 'hidden' %>
+            <%= button_tag type: 'submit', name: 'selected_option', value: 'a', class: 'btn w-100', style: 'margin-bottom: 10px;' do %>
               <%= @past_exam.option_a %>
             <% end %>
           </li>
+          <!-- 選択肢B -->
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_b, class: 'btn w-100' do %>
-              <%= form.radio_button :selected_option, 'b', class: 'hidden' %>
+            <%= button_tag type: 'submit', name: 'selected_option', value: 'b', class: 'btn w-100', style: 'margin-bottom: 10px;' do %>
               <%= @past_exam.option_b %>
             <% end %>
           </li>
+          <!-- 選択肢C -->
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_c, class: 'btn w-100' do %>
-              <%= form.radio_button :selected_option, 'c', class: 'hidden' %>
+            <%= button_tag type: 'submit', name: 'selected_option', value: 'c', class: 'btn w-100', style: 'margin-bottom: 10px;' do %>
               <%= @past_exam.option_c %>
             <% end %>
           </li>
+          <!-- 選択肢D -->
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_d, class: 'btn btn w-100' do %>
-              <%= form.radio_button :selected_option, 'd', class: 'hidden' %>
+            <%= button_tag type: 'submit', name: 'selected_option', value: 'd', class: 'btn btn w-100', style: 'margin-bottom: 10px;' do %>
               <%= @past_exam.option_d %>
             <% end %>
           </li>
+          <!-- 選択肢E -->
           <li style="padding-left: 10px; padding-right: 10px;">
-            <%= form.label :selected_option_e, class: 'btn w-100' do %>
-              <%= form.radio_button :selected_option, 'e', class: 'hidden' %>
+            <%= button_tag type: 'submit', name: 'selected_option', value: 'e', class: 'btn w-100', style: 'margin-bottom: 10px;' do %>
               <%= @past_exam.option_e %>
             <% end %>
           </li>
         </ul>
-        <!-- 回答ボタン -->
-        <%= form.submit t('past_exams.answer_button'), onclick: 'submitAnswer()', class: "btn1" %>
       <% end %>
     </div>
   </div>
