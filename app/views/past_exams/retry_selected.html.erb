@@ -42,40 +42,39 @@
       <h2><%= t('past_exams.retry_title') %></h1>
       <p id="exam-text"><%= @past_exam.exam_text %></p>
 
-
-  <%= form_with(model: @user_past_exam, url: retry_selected_past_exam_path(@past_exam), method: 'post') do |form| %>
-    <ul class="list-unstyled">
-    <li style="padding-left: 10px; padding-right: 10px; list-style-type: none">
-      <%= form.label :selected_option_a, class: 'btn w-100' do %>
-        <%= form.radio_button :selected_option, 'a', class: 'hidden' %>
-        <%= @past_exam.option_a %>
-      <% end %>
-    </li>
-    <li style="padding-left: 10px; padding-right: 10px;">
-      <%= form.label :selected_option_b, class: 'btn w-100' do %>
-        <%= form.radio_button :selected_option, 'b', class: 'hidden' %>
-        <%= @past_exam.option_b %>
-      <% end %>
-    </li>
-    <li style="padding-left: 10px; padding-right: 10px;">
-      <%= form.label :selected_option_c, class: 'btn w-100' do %>
-        <%= form.radio_button :selected_option, 'c', class: 'hidden' %>
-        <%= @past_exam.option_c %>
-      <% end %>
-    </li>
-    <li style="padding-left: 10px; padding-right: 10px;">
-      <%= form.label :selected_option_d, class: 'btn w-100' do %>
-        <%= form.radio_button :selected_option, 'd', class: 'hidden' %>
-        <%= @past_exam.option_d %>
-      <% end %>
-    </li>
-    <li style="padding-left: 10px; padding-right: 10px;">
-      <%= form.label :selected_option_e, class: 'btn w-100' do %>
-        <%= form.radio_button :selected_option, 'e', class: 'hidden' %>
-        <%= @past_exam.option_e %>
-      <% end %>
-    </li>
-  </ul>
-    <%= form.submit t('past_exams.answer_button'), class: "btn1" %>
-  <% end %>
+    <%= form_with(model: @user_past_exam, url: retry_selected_past_exam_path(@past_exam), method: 'post') do |form| %>
+      <ul class="list-unstyled">
+        <!-- 選択肢A -->
+        <li style="padding-left: 10px; padding-right: 10px;">
+          <%= button_tag type: 'submit', name: 'selected_option', value: 'a', class: 'btn w-100', style: 'margin-bottom: 10px;' do %>
+            <%= @past_exam.option_a %>
+          <% end %>
+        </li>
+        <!-- 選択肢B -->
+        <li style="padding-left: 10px; padding-right: 10px;">
+          <%= button_tag type: 'submit', name: 'selected_option', value: 'b', class: 'btn w-100', style: 'margin-bottom: 10px;' do %>
+            <%= @past_exam.option_b %>
+          <% end %>
+        </li>
+        <!-- 選択肢C -->
+        <li style="padding-left: 10px; padding-right: 10px;">
+          <%= button_tag type: 'submit', name: 'selected_option', value: 'c', class: 'btn w-100', style: 'margin-bottom: 10px;' do %>
+            <%= @past_exam.option_c %>
+          <% end %>
+        </li>
+        <!-- 選択肢D -->
+        <li style="padding-left: 10px; padding-right: 10px;">
+          <%= button_tag type: 'submit', name: 'selected_option', value: 'd', class: 'btn btn w-100', style: 'margin-bottom: 10px;' do %>
+            <%= @past_exam.option_d %>
+          <% end %>
+        </li>
+        <!-- 選択肢E -->
+        <li style="padding-left: 10px; padding-right: 10px;">
+          <%= button_tag type: 'submit', name: 'selected_option', value: 'e', class: 'btn w-100', style: 'margin-bottom: 10px;' do %>
+            <%= @past_exam.option_e %>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+    
 </div>
