@@ -17,6 +17,9 @@
       background-color: #FFA080; /* ホバー時の背景色、必要に応じて調整 */
     }
   }
+  .custom-card {
+    background-color: #F6FDC3;
+  }
 </style>
 <div class = "text-center">
 <br>
@@ -30,7 +33,7 @@
   <div class="row">
     <% @vocabulary_entries.each do |entry| %>
       <div class="col-md-4">
-        <div class="card mb-4">
+        <div class="card mb-4 custom-card">
           <div class="card-body">
             <h5 class="card-title"><%= entry.word %></h5>
             <p class="card-text meaning-display" style="display:none;"><%= entry.meaning %></p>
