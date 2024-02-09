@@ -12,10 +12,9 @@ class EventsController < ApplicationController
       @event = current_user.events.new(event_params)
   
       if @event.save
-        redirect_to events_path, flash: { success: 'イベントが作成されました。' }
+        render json: @event, status: :created
       else
-        @events = current_user.events
-        render :index
+        render json: @event.errors, status: :unprocessable_entity
       end
     end
 
