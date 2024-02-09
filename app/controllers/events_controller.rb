@@ -4,17 +4,8 @@ class EventsController < ApplicationController
     before_action :authenticate_user!
     
     def index
-      @events = current_user.events.all # すべてのイベントを取得する例
-    
-      # FullCalendar に表示する形式にデータを変換する
-      @event_data = @events.map do |event|
-        {
-          title: event.title,
-          start: event.start_datetime.rfc3339, # RFC3339 形式に変換
-        }
-      end
-      # FullCalendar に渡すために JSON 形式に変換する
-      @event_data_json = @event_data.to_json
+      @events = current_user.events.where('start_datetime > ?', Time.now).order(:start_datetime).limit(3)
+      @event = Event.new
     end
   
     def create
