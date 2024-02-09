@@ -9,8 +9,8 @@
           aspectRatio: 1,
           locale: 'ja',
           editable: true, // イベントを編集可能にする
-          events: '/events/get_upcoming_events', // カレンダーに表示するイベントを取得するエンドポイント
           events: [
+            <%= raw @event_data_json %>,
             {
               title: '介護福祉士試験（筆記）',
               start: '2024-01-28'
@@ -27,33 +27,7 @@
           ]
         });
         calendar.render();
-        document.getElementById('new_event_form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var form = this;
-    var formData = new FormData(form);
-    
-    fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
-      }
-    })
-    .then(response => response.json())
-    .then(eventData => {
-      // 新しいイベントをFullCalendarに追加する
-      calendar.addEvent({
-        id: eventData.id,
-        title: eventData.title,
-        start: eventData.start_datetime,
-        // 必要に応じて他のイベントプロパティを追加する
-      });
-      form.reset();
-    })
-    .catch(error => console.error('Error:', error));
-  });
-});
-
+        });
     </script>
 </head>
 <div class="container-fluid mt-4" style="padding-left: 40px; padding-right: 40px;">
