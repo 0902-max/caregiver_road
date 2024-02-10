@@ -10,7 +10,6 @@
           locale: 'ja',
           editable: true, // イベントを編集可能にする
           events: [
-            <%= raw @event_data_json %>,
             {
               title: '介護福祉士試験（筆記）',
               start: '2024-01-28'
@@ -27,7 +26,8 @@
           ]
         });
         calendar.render();
-        });
+
+      });
     </script>
 </head>
 <div class="container-fluid mt-4" style="padding-left: 40px; padding-right: 40px;">
