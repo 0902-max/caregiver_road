@@ -44,7 +44,7 @@
 ### インフラ
 - Heroku
 
-###　開発環境
+### 開発環境
 - Docker 
 - github 
 
