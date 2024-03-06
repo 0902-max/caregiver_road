@@ -4,7 +4,7 @@
 
 
 ## 【アプリのURL】
-### [Caregiver_Road]{https://www.caregiver-road.com/}
+### https://www.caregiver-road.com/
 
 ## サービス概要
 介護福祉士になるための網羅的なサービスです。 自身の学歴等によって受験資格までのルートをスッキリさせて、そのために必要なものや過去問を提供するサービス。
@@ -20,18 +20,33 @@
 ログインしてプロフィールを設定することで受験資格までのロードマップを作成でき、助成金等の情報をゲットでき、受験の申し込み期日等の通知を受けられる。
 その後は過去問をスマホ等で手軽に行え、用語を単語帳のように見る事ができる。隙間時間で勉強ができ、受験までの手間が簡略化できる。
 
-■ サービスの差別化ポイント・推しポイント 
+## サービスの差別化ポイント・推しポイント 
 介護福祉士の過去問アプリはあるし、介護福祉士受験の為のロードマップや助成金等のアプリはそれぞれのアプリはあるが、網羅的には見当たらなかった。
 
 ## 主な使用技術　
-・開発環境: Docker 　
-・Ruby 3.2.2 
-・Rails 7.0.4.3 　
-・github 
-・PostgreSQL 
-・CSS：　bootstrap5 
-・gem: Devise,Kaminari,ActiveAdmin,Capybara,Faker 
-・WebAPI: Notifications_API(通知)、jGrants API（全体的な補助金一覧取得API）、 Calender API（学習ロードマップのカレンダーAPI）
+### バックエンド
+- Ruby 3.2.2 
+- Rails 7.0.4.3 　
+- PostgreSQL 
+- gem
+  - devise
+  - Kaminari
+  - Capybara
+  - Faker 
+- API
+  - Notifications_API
+  - jGrants API（全体的な補助金一覧取得API）
+  - FullCalendar API
+
+### フロントエンド
+- bootstrap5 
+
+### インフラ
+- Heroku
+
+###　開発環境
+- Docker 
+- github 
 
 ## 画面変異図 　
 [![Image from Gyazo](https://i.gyazo.com/c146091f190cb676019dc915a725072b.png)](https://gyazo.com/c146091f190cb676019dc915a725072b)
